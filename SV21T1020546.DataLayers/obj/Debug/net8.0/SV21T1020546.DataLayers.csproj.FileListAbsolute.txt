@@ -1,0 +1,15 @@
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\bin\Debug\net8.0\SV21T1020546.DataLayers.deps.json
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\bin\Debug\net8.0\SV21T1020546.DataLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\bin\Debug\net8.0\SV21T1020546.DataLayers.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\bin\Debug\net8.0\SV21T1020546.DomainModels.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\bin\Debug\net8.0\SV21T1020546.DomainModels.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.csproj.AssemblyReference.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.AssemblyInfoInputs.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.AssemblyInfo.cs
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.csproj.CoreCompileInputs.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T102.090BC467.Up2Date
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\refint\SV21T1020546.DataLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\ref\SV21T1020546.DataLayers.dll

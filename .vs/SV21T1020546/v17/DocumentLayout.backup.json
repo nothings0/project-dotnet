@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B33F7AB-C5B5-44C7-9317-D511135D7298}|SV21T1020546.DataLayers\\SV21T1020546.DataLayers.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.datalayers\\sqlserver\\productdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B33F7AB-C5B5-44C7-9317-D511135D7298}|SV21T1020546.DataLayers\\SV21T1020546.DataLayers.csproj|solutionrelative:sv21t1020546.datalayers\\sqlserver\\productdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "RelativeToolTip": "SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD0AAACqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-07T17:28:42.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "SV21T1020546.Web\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-07T15:39:34.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductDAL.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.DataLayers\\SQLServer\\ProductDAL.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.DataLayers\\SQLServer\\ProductDAL.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.DataLayers\\SQLServer\\ProductDAL.cs",
+              "RelativeToolTip": "SV21T1020546.DataLayers\\SQLServer\\ProductDAL.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAAAFIBAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T13:36:54.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "SV21T1020546.Web\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwHcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T10:10:42.174Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

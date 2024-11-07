@@ -1,0 +1,17 @@
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.BusinessLayers.deps.json
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.BusinessLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.BusinessLayers.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.DataLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.DomainModels.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.DataLayers.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\bin\Debug\net8.0\SV21T1020546.DomainModels.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.csproj.AssemblyReference.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.AssemblyInfoInputs.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.AssemblyInfo.cs
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.csproj.CoreCompileInputs.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T102.3176ED8D.Up2Date
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\refint\SV21T1020546.BusinessLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.pdb
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\ref\SV21T1020546.BusinessLayers.dll
