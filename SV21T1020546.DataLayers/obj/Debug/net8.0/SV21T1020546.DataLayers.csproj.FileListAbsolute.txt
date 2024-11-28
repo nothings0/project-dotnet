@@ -13,3 +13,4 @@ C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\S
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\refint\SV21T1020546.DataLayers.dll
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.pdb
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\ref\SV21T1020546.DataLayers.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DataLayers\obj\Debug\net8.0\SV21T1020546.DataLayers.sourcelink.json

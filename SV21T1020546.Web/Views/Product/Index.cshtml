@@ -8,9 +8,9 @@
         <form id ="frmSearchInput" action="~/Product/Search" method="get">
             <input type="hidden" name="@nameof(Model.PageSize)" value="@Model.PageSize" />
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-3" style="padding: 0 5px 0 15px;">
                     <label>Loại hàng:</label>
-                    <select class="form-control" name="CategoryID">
+                    <select class="form-control" name="@nameof(Model.CategoryID)">
                         <option value="">-- Chọn loại hàng --</option>
                         @foreach (var item in SV21T1020546.BusinessLayers.CommonDataService.ListOfCategories(out int x))
                         {
@@ -25,9 +25,9 @@
                         }
                     </select>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3" style="padding: 0 5px;">
                     <label>Nhà cung cấp:</label>
-                    <select class="form-control" name="SupplierID">
+                    <select class="form-control" name="@nameof(Model.SupplierID)">
                         <option value="">-- Chọn nhà cung cấp --</option>
                         @foreach (var item in SV21T1020546.BusinessLayers.CommonDataService.ListOfSuppliers(out int x))
                         {
@@ -42,18 +42,18 @@
                         }
                     </select>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-1" style="padding: 0 5px;">
                     <label>Giá từ:</label>
-                    <input type="text" class="form-control" name="MinPrice" value="0">
+                    <input type="text" class="form-control number-separator" name="@nameof(Model.MinPrice)" value="@Model.MinPrice">
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-1" style="padding: 0 5px;">
                     <label>đến:</label>
-                    <input type="text" class="form-control" name="MaxPrice" value="0">
+                    <input type="text" class="form-control number-separator" name="@nameof(Model.MaxPrice)" value="@Model.MaxPrice">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4" style="padding: 0 15px 0 5px;">
                     <label>Tên mặt hàng cần tìm:</label>
                     <div class="input-group">
-                        <input name="SearchValue" type="text" class="form-control" placeholder="Nhập mặt hàng hàng cần tìm" autofocus="">
+                        <input name="@nameof(Model.SearchValue)" value="@Model.SearchValue" type="text" class="form-control" placeholder="Nhập mặt hàng hàng cần tìm" autofocus="">
                         <div class="input-group-btn">
                             <button class="btn btn-info" type="submit">
                                 <i class="glyphicon glyphicon-search"></i>

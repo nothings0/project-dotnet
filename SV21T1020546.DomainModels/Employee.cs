@@ -12,6 +12,6 @@ namespace SV21T1020546.DomainModels
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Photo { get; set; } = string.Empty;
-        public bool IsWorking { get; set; }
+        public bool IsWorking { get; set; } = true;
     }
 }

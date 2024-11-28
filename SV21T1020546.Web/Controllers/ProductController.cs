@@ -18,6 +18,10 @@ namespace SV21T1020546.Web.Controllers
                     Page = 1,
                     PageSize = PAGE_SIZE,
                     SearchValue = "",
+                    CategoryID = 0,
+                    SupplierID = 0,
+                    MinPrice = 0,
+                    MaxPrice = 0
                 };
 
             return View(condition);
@@ -32,6 +36,10 @@ namespace SV21T1020546.Web.Controllers
                 Page = condition.Page,
                 PageSize = condition.PageSize,
                 SearchValue = condition.SearchValue ?? "",
+                CategoryID = condition.CategoryID,
+                SupplierID = condition.SupplierID,
+                MinPrice = condition.MinPrice,
+                MaxPrice = condition.MaxPrice,
                 RowCount = rowCount,
                 Data = data
             };
@@ -85,28 +93,33 @@ namespace SV21T1020546.Web.Controllers
             if (data.CategoryID == -1)
                 ModelState.AddModelError(nameof(data.CategoryID), "*");
 
-            if (!ModelState.IsValid)
-            {
-                return View("Edit", data);
-            }
-
-
             // xử lý ảnh
             if (uploadPhoto != null)
             {
                 string fileName = $"{DateTime.Now.Ticks}_{uploadPhoto.FileName}";
                 string filePath = Path.Combine(ApplicationContext.WebRootPath, @"images\products", fileName);
-      
+
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     uploadPhoto.CopyTo(stream);
                 }
                 data.Photo = fileName;
             }
+            else
+            {
+                ModelState.AddModelError(nameof(data.Photo), "*");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View("Edit", data);
+            }
+
             //TODO: Kiem tra du lieu dau vao dung hay khong?
             if (data.ProductID == 0)
             {
                 int id = ProductDataService.AddProduct(data);
+                return RedirectToAction("Edit", new {id = id });
             }
             else
             {
@@ -168,7 +181,7 @@ namespace SV21T1020546.Web.Controllers
         {
 
             // xử lý ảnh
-            if (uploadPhoto != null)
+            if (uploadPhoto != null && uploadPhoto is IFormFile file && file.Length > 0)
             {
                 string fileName = $"{DateTime.Now.Ticks}_{uploadPhoto.FileName}";
                 string filePath = Path.Combine(ApplicationContext.WebRootPath, @"images\products", fileName);
@@ -179,6 +192,14 @@ namespace SV21T1020546.Web.Controllers
                 }
                 data.Photo = fileName;
             }
+            else
+            {
+                    ModelState.AddModelError(nameof(data.Photo), "*");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View("Photo", data);
+            }
             //TODO: Kiem tra du lieu dau vao dung hay khong?
             if (data.PhotoID == 0)
             {
@@ -188,7 +209,7 @@ namespace SV21T1020546.Web.Controllers
             {
                 bool result = ProductDataService.UpdatePhoto(data);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", new { id = data.ProductID });
         }
 
         [HttpPost]
@@ -201,7 +222,7 @@ namespace SV21T1020546.Web.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View("Edit", data);
+                return View("Attribute", data);
             }
             //TODO: Kiem tra du lieu dau vao dung hay khong?
             if (data.AttributeID == 0)
@@ -212,7 +233,8 @@ namespace SV21T1020546.Web.Controllers
             {
                 bool result = ProductDataService.UpdateAttribute(data);
             }
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return RedirectToAction("Edit", new { id = data.ProductID });
         }
     }
 }

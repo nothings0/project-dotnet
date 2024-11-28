@@ -76,7 +76,7 @@ namespace SV21T1020546.Web.Controllers
 
             if (String.IsNullOrWhiteSpace(data.FullName))
             {
-                ModelState.AddModelError(nameof(data.FullName), "Tên nhân viên không được rỗng");
+                ModelState.AddModelError(nameof(data.FullName), "*");
             }
 
             if (String.IsNullOrWhiteSpace(data.Email))
@@ -100,13 +100,13 @@ namespace SV21T1020546.Web.Controllers
             {
                 if(d.Value.Year < 1753)
                 {
-                    ModelState.AddModelError(nameof(data.BirthDate), "Vui lòng nhập ngày sinh sau năm 1753");
+                    ModelState.AddModelError("BirthDate_ERROR", "Vui lòng nhập ngày sinh sau năm 1753");
                 }
                 data.BirthDate = d.Value;
             }
             else
             {
-                ModelState.AddModelError(nameof(data.BirthDate), "Vui lòng nhập ngày sinh");
+                ModelState.AddModelError(nameof(data.BirthDate), "*");
             }
 
             if (!ModelState.IsValid)

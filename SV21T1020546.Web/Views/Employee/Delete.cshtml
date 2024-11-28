@@ -15,7 +15,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Ngày sinh:</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static form-control">@Model.BirthDate</p>
+                    <p class="form-control-static form-control">@Model.BirthDate?.ToString("dd/MM/yyyy")</p>
                 </div>
             </div>
             <div class="form-group">
@@ -33,18 +33,19 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Email:</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static">@Model.Email</p>
+                    <p class="form-control-static form-control">@Model.Email</p>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Trạng thái:</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static">@(Model.IsWorking ? "Tài khoản đang làm việc" : "Tài khoản không làm việc")</p>
+                    <p class="form-control-static">@(Model.IsWorking ? "Tài khoản đang làm việc" : "Tài khoản đã nghỉ việc")</p>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-sm-10">
-                    <img id="Photo" src="~/themes/dist/img/user4-128x128.jpg" class="img img-bordered" style="width:200px">
+                    <img id="Photo" style="width:200px" class="profile-user-img img-responsive img-bordered"
+                         src="@(string.IsNullOrEmpty(Model.Photo) ? Url.Content("~/themes/dist/img/user.jpg") : Url.Content($"~/images/employees/{Model.Photo}"))" />
                 </div>
             </div>
             <div class="form-group">

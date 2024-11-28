@@ -15,9 +15,9 @@ namespace SV21T1020546.DataLayers.SQLServer
             int id = 0;
             using (var connection = OpenConnection())
             {
-                var sql = @"insert into Suppliers(SupplierName, ContactName, Provice, Address, Phone, Email)
-                           values (@SupplierName, @ContactName, @Provice, @Address, @Phone, @Email);
-                           select SCOPE_IDENTITY();";
+                var sql = @"insert into Suppliers (SupplierName, ContactName, Provice, Address, Phone, Email)
+                            values (@SupplierName, @ContactName, @Provice, @Address, @Phone, @Email);
+                            select CAST(SCOPE_IDENTITY() as int)";
                 var parameters = new
                 {
                     SupplierName = data.SupplierName ?? "",
@@ -138,14 +138,17 @@ namespace SV21T1020546.DataLayers.SQLServer
             bool result = false;
             using (var connection = OpenConnection())
             {
-                var sql = @"update Suppliers
+                var sql = @"if not exists(select * from Suppliers where SupplierID <> @SupplierID and Email = @Email)
+                                begin                                
+                                update Suppliers
                                     set SupplierName = @SupplierName,
 	                                ContactName = @ContactName,
 	                                Provice = @Provice,
 	                                Phone = @Phone,
                                     Address = @Address,
 	                                Email = @Email
-                                where SupplierID = @SupplierID";
+                                where SupplierID = @SupplierID
+                                end";
                 var parameters = new
                 {
                     SupplierName = data.SupplierName,

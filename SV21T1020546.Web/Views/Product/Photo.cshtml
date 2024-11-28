@@ -7,7 +7,7 @@
             <input type="hidden" name="@nameof(Model.ProductID)" value="@Model.ProductID" />
             <input type="hidden" name="@nameof(Model.PhotoID)" value="@Model.PhotoID" />
             <div class="form-group">
-                <label class="control-label col-sm-2">Chọn file ảnh:</label>
+                <label class="control-label col-sm-2">Chọn file ảnh: @Html.ValidationMessage(nameof(Model.Photo), new { @style = "color:#f00" })</label>
                 <div class="col-sm-10">
                     <input type="file" class="form-control" name="uploadPhoto" accept="image/*"
                            onchange="document.getElementById('Photo').src = window.URL.createObjectURL(this.files[0])" />
@@ -51,7 +51,7 @@
                         <i class="fa fa-floppy-o"></i>
                         Lưu dữ liệu
                     </button>
-                    <a href="~/Product/Edit/123" class="btn btn-default">
+                    <a href="~/Product/Edit/@Model.ProductID" class="btn btn-default">
                         Quay lại
                     </a>
                 </div>

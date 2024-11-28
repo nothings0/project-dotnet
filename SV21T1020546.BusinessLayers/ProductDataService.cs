@@ -18,7 +18,7 @@ namespace SV21T1020546.BusinessLayers
         }
         public static List<Product> ListProducts(out int rowCount, int page = 1, int pageSize = 0, string searchValue = "", int categoryID = 0, int suplierID = 0, decimal minPrice = 0, decimal maxPrice = 0)
         {
-            rowCount = productDB.Count(searchValue);
+            rowCount = productDB.Count(searchValue, categoryID, suplierID, minPrice, maxPrice);
             return productDB.List(page, pageSize, searchValue, categoryID, suplierID, minPrice, maxPrice);
         }
         public static Product? GetProduct(int productID)

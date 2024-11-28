@@ -9,7 +9,7 @@
     @foreach (var item in Model.Data)
     {
         <div class="col-sm-4">
-            <div class="box box-info">
+            <div class="box box-info" style="overflow: hidden;">
                 <div class="box-header with-border">
                     <h3 class="box-title">@item.FullName</h3>
                     <div class="box-tools pull-right">
@@ -25,18 +25,18 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <img class="profile-user-img img-responsive img-bordered"
-                                 src="@(string.IsNullOrEmpty(item.Photo) ? Url.Content("~/themes/dist/img/user4-128x128.jpg") : Url.Content($"~/images/employees/{item.Photo}"))" />
+                                 src="@(string.IsNullOrEmpty(item.Photo) ? Url.Content("~/themes/dist/img/user.jpg") : Url.Content($"~/images/employees/{item.Photo}"))" />
                         </div>
                         <div class="col-sm-8">
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <i class="fa fa-birthday-cake"></i>@item.BirthDate?.ToString("dd/MM/yyyy")
+                                    <i class="fa fa-birthday-cake"> </i>@item.BirthDate?.ToString("dd/MM/yyyy")
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-phone"></i>@item.Phone
+                                    <i class="fa fa-phone"> </i>@item.Phone
                                 </li>
                                 <li class="list-group-item">
-                                    <i class="fa fa-envelope"></i>@item.Email
+                                    <i class="fa fa-envelope"> </i>@item.Email
                                 </li>
                             </ul>
                         </div>

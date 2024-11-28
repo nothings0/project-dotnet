@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label>Tỉnh/Thành:</label>
-                <select class="form-control" name="@nameof(Model.Provice)">
+                <select class="form-control select2" name="@nameof(Model.Provice)">
                     <option value="">--Chọn Tỉnh/Thành--</option>
                     @foreach (var item in SV21T1020546.BusinessLayers.CommonDataService.ListOfProvinces())
                     {

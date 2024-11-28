@@ -8,7 +8,7 @@ namespace SV21T1020546.Web.Controllers
 {
     public class ShipperController : Controller
     {
-        public int PAGE_SIZE = 10;
+        public int PAGE_SIZE = 5;
         private const string SHIPPER_SEARCH_CONDITION = "ShipperSearchCondition";
         public IActionResult Index()
         {

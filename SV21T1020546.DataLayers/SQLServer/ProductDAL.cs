@@ -94,28 +94,47 @@ namespace SV21T1020546.DataLayers.SQLServer
         {
             int count = 0;
             searchValue = $"%{searchValue}%";
+
             using (var connection = OpenConnection())
             {
                 var sql = @"select count(*)
-                        from Products
-                        where (ProductName like @searchValue)";
+                    from Products
+                    where ProductName like @searchValue";
+
+                // Add conditions dynamically
+                if (categoryID > 0)
+                    sql += " and CategoryID = @categoryID";
+                if (suplierID > 0)
+                    sql += " and SupplierID = @suplierID";
+                if (minPrice > 0)
+                    sql += " and Price >= @minPrice";
+                if (maxPrice > 0)
+                    sql += " and Price <= @maxPrice";
+
                 var parameters = new
                 {
-                    searchValue
+                    searchValue,
+                    categoryID,
+                    suplierID,
+                    minPrice,
+                    maxPrice
                 };
-                count = connection.ExecuteScalar<int>(sql, parameters, commandType: System.Data.CommandType.Text);
 
+                count = connection.ExecuteScalar<int>(sql, parameters, commandType: System.Data.CommandType.Text);
             }
 
             return count;
         }
+
 
         public bool Delete(int productID)
         {
             bool result = false;
             using (var connection = OpenConnection())
             {
-                var sql = @"delete from Products where ProductID = @ProductID";
+                var sql = @"delete from ProductPhotos where ProductID = @ProductID
+                            delete from ProductAttributes where ProductID = @ProductID
+                            delete from Products where ProductID = @ProductID";
                 var parameters = new
                 {
                     ProductID = productID

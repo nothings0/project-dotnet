@@ -20,7 +20,8 @@ namespace SV21T1020546.DataLayers.SQLServer
                                 begin
                             insert into Shippers(ShipperName, Phone)
                            values (@ShipperName, @Phone);
-                           select SCOPE_IDENTITY();";
+                           select SCOPE_IDENTITY();
+                            end";
                 var parameters = new
                 {
                     ShipperName = data.ShipperName ?? "",

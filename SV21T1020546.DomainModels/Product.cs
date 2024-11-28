@@ -16,7 +16,7 @@ namespace SV21T1020546.DomainModels
         public string Unit { get; set; } = "";
         public decimal Price { get; set; }
         public string Photo { get; set; } = "";
-        public bool IsSelling { get; set; }
+        public bool IsSelling { get; set; } = true;
 
     }
 }

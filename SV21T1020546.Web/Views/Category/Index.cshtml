@@ -9,14 +9,14 @@
             <input type="hidden" name="@nameof(Model.PageSize)" value="@Model.PageSize" />
             <div class="input-group">
 
-                <input type="text" class="form-control" placeholder="Nhập tên loại hàng cần tìm" autofocus value="@ViewBag.SearchValue" />
+                <input type="text" class="form-control" placeholder="Nhập tên loại hàng cần tìm" autofocus name="@nameof(Model.SearchValue)" value="@Model.SearchValue" />
 
                 <div class="input-group-btn">
                     <button class="btn btn-info" type="submit">
                         <i class="glyphicon glyphicon-search"></i>
                     </button>
 
-                    <a href="~/Category/Create" class="btn btn-primary">
+                    <a href="~/Category/Create" class="btn btn-primary" style="margin-left: 5px">
                         <i class="fa fa-plus"> </i> Bổ sung
                     </a>
                 </div>

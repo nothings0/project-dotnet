@@ -74,3 +74,4 @@ C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.Web\bin\Debug\net8.0\SV21T102
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.Web\obj\Debug\net8.0\SV21T1020546.Web.csproj.AssemblyReference.cache
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.Web\obj\Debug\net8.0\SV21T102.48B14BC7.Up2Date
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.Web\obj\Debug\net8.0\SV21T1020546.Web.sourcelink.json
