@@ -124,7 +124,7 @@
                     @{
                         var data = SV21T1020546.BusinessLayers.OrderDataService.ListOrderDetails(Model.OrderID);
                         decimal totalAmount = 0;
-                        int stt = 1; // Biến đếm cho số thứ tự
+                        int stt = 1;
                         for (int i = 0; i < data.Count; i++)
                         {
                             var item = data[i];
@@ -134,7 +134,7 @@
                     @foreach (var item in data)
                     {
                         <tr>
-                            <td class="text-center">@stt</td> <!-- Số thứ tự -->
+                            <td class="text-center">@stt</td>
                             <td>@item.ProductName</td>
                             <td class="text-center">@item.Unit</td>
                             <td class="text-center">@item.Quantity</td>
@@ -149,7 +149,7 @@
                                 </a>
                             </td>
                         </tr>
-                        stt++; // Tăng số thứ tự sau mỗi dòng
+                        stt++;
                     }
                 </tbody>
                 <tfoot>

@@ -39,10 +39,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                @{
-                    var data = SV21T1020546.BusinessLayers.OrderDataService.GetOrder(Model.OrderID);
-                }
-                <button type="submit" class="btn btn-primary @(data?.Status == Constants.ORDER_INIT || data.Status == Constants.ORDER_ACCEPTED ? "" : "btn-disable")">
+                 @{
+                     var data = SV21T1020546.BusinessLayers.OrderDataService.GetOrder(Model.OrderID);
+                 }
+                <button type="submit" class="btn btn-primary">
                     <i class="fa fa-floppy-o"></i> Cập nhật
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">

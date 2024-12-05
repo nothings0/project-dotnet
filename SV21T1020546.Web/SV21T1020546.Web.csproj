@@ -6081,8 +6081,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AppCodes\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 

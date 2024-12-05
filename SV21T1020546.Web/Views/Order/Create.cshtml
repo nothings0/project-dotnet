@@ -110,9 +110,8 @@
             });
         };
         $(document).ready(function () {
-            var a = @Model.Page
-                doSearch(a);
-                showShoppingCart();
+            doSearch(@Model.Page);
+            showShoppingCart();
             $("#frmSearchInput").submit(function (e) {
                 e.preventDefault();
                 doSearch(1);

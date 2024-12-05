@@ -3,9 +3,11 @@ using System.Globalization;
 using SV21T1020546.BusinessLayers;
 using SV21T1020546.DomainModels;
 using SV21T1020546.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SV21T1020546.Web.Controllers
 {
+    [Authorize(Roles = $"{WebUserRoles.ADMINISTRATOR},{WebUserRoles.EMPLOYEE}")]
     public class OrderController : Controller
     {
         private const int PAGE_SIZE = 50;
@@ -92,17 +94,12 @@ namespace SV21T1020546.Web.Controllers
         {
             if(Request.Method == "POST")
             {
-                //if (shipperID == 0)
-                //    ModelState.AddModelError("ShipperID", "Vui lòng chọn người giao hàng");
-
-                //if (!ModelState.IsValid)
-                //{
-                //    return RedirectToAction("Details", new { id = id, shipperID = shipperID });
-                //}
+                if (shipperID == 0)
+                    return Json("Vui lòng chọn người giao hàng");
 
                 var data = OrderDataService.ShipOrder(id, shipperID);
 
-                return RedirectToAction("Details", new { id = id });
+                return Json("");
             }
             else
             {
@@ -232,8 +229,8 @@ namespace SV21T1020546.Web.Controllers
 
             if (customerID == 0 || string.IsNullOrWhiteSpace(deliveryProvince) || string.IsNullOrWhiteSpace(deliveryAddress))
                 return Json("Vui lòng nhập đầy đủ thông tin khách hàng và nơi giao hàng");
-
-            int employeeID = 1; //TODO: Thay bởi ID cảu nhân viên
+            //TODO: Thay bởi ID cảu nhân viên
+            int employeeID = int.Parse(User.GetUserData()!.UserId);
 
             List<OrderDetail> orderDetails = new List<OrderDetail>();
             foreach (var item in shoppingCart)
