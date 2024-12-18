@@ -16,6 +16,7 @@ namespace SV21T1020546.Web.Controllers
         {
             return View();
         }
+
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -60,8 +61,37 @@ namespace SV21T1020546.Web.Controllers
             return RedirectToAction("Login");
         }
 
-        public IActionResult ChangePassword()
+        public IActionResult ChangePassword(string userName, string oldPassword, string newPassword, string confirmPassword)
         {
+            if (Request.Method == "POST")
+            {
+
+                if (string.IsNullOrWhiteSpace(oldPassword) || string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
+                {
+                    ModelState.AddModelError("Error", "Vui lòng nhập đầy đủ");
+                    return View();
+                }
+
+                if (confirmPassword.Trim().Equals(newPassword.Trim()) == false)
+                    ModelState.AddModelError("confirmPass", "Xác nhận lại mật khẩu sai");
+                if (ModelState.IsValid == false)
+                {
+                    return View();
+                }
+                else
+                {
+                    var result = UserAccountService.ChangePassword(UserTypes.Employee, userName, oldPassword, newPassword);
+                    if (result == true)
+                    {
+                        return RedirectToAction("Logout");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("oldPass", "Mật khẩu cũ không đúng");
+                        return View();
+                    }
+                }
+            }
             return View();
         }
 

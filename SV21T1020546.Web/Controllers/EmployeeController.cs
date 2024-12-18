@@ -98,11 +98,11 @@ namespace SV21T1020546.Web.Controllers
 
             DateTime? d = _birthDate.ToDateTime();
 
-            if(d!=null)
+            if (d != null)
             {
-                if(d.Value.Year < 1753)
+                if (d.Value.Year < 1753)
                 {
-                    ModelState.AddModelError("BirthDate_ERROR", "Vui lòng nhập ngày sinh sau năm 1753");
+                    ModelState.AddModelError("ERROR_BIRTHDATE", "Vui lòng nhập ngày sinh sau năm 1753");
                 }
                 data.BirthDate = d.Value;
             }
@@ -121,7 +121,7 @@ namespace SV21T1020546.Web.Controllers
                 string fileName = $"{DateTime.Now.Ticks}_{uploadPhoto.FileName}";
                 string filePath = Path.Combine(ApplicationContext.WebRootPath, @"images\employees", fileName);
 
-                using(var stream = new FileStream(filePath, FileMode.CreateNew))
+                using (var stream = new FileStream(filePath, FileMode.CreateNew))
                 {
                     uploadPhoto.CopyTo(stream);
                 }

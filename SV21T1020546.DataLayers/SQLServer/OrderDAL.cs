@@ -65,9 +65,6 @@ namespace SV21T1020546.DataLayers.SQLServer
             return count;
 
         }
-
-
-
         public bool Delete(int orderID)
         {
             bool result = false;

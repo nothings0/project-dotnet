@@ -84,11 +84,10 @@ namespace SV21T1020546.Web.Controllers
         [HttpPost]
         public IActionResult UpdateDetail(int id = 0, int ProductID = 0, int quantity = 0, decimal salePrice = 0)
         {
+            if (quantity <= 0 || salePrice < 0)
+                return Json("Vui nhập số lượng và giá hợp lệ");
             var data = OrderDataService.SaveOrderDetail(id, ProductID, quantity, salePrice);
-            if (!data)
-                return RedirectToAction("Details", new { id = id });
-            else
-                return RedirectToAction("Details", new { id = id });
+            return Json("");
         }
         public IActionResult Shipping(int id = 0, int shipperID = 0)
         {
@@ -108,7 +107,6 @@ namespace SV21T1020546.Web.Controllers
                     return RedirectToAction("Details", new { id = id });
                 return View(data);
             }
-            
         }
 
         public IActionResult Accept(int id = 0)
@@ -229,7 +227,8 @@ namespace SV21T1020546.Web.Controllers
 
             if (customerID == 0 || string.IsNullOrWhiteSpace(deliveryProvince) || string.IsNullOrWhiteSpace(deliveryAddress))
                 return Json("Vui lòng nhập đầy đủ thông tin khách hàng và nơi giao hàng");
-            //TODO: Thay bởi ID cảu nhân viên
+            
+            //TODO: Thay bởi ID của nhân viên
             int employeeID = int.Parse(User.GetUserData()!.UserId);
 
             List<OrderDetail> orderDetails = new List<OrderDetail>();

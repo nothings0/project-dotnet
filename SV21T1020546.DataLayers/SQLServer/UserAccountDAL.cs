@@ -53,9 +53,34 @@ namespace SV21T1020546.DataLayers.SQLServer
             return data;
         }
 
-        public bool ChangePassword(UserTypes userTypes, string username, string password)
+        public bool ChangePassword(UserTypes userTypes, string username, string oldPassword, string newPassword)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            string sql = "";
+            if (userTypes == UserTypes.Employee)
+            {
+                sql = @"update Employees 
+                        set Password = @newPassword 
+                        where Email = @userName and Password = @oldPassword";
+            }
+            else if (userTypes == UserTypes.Customer)
+            {
+                sql = @"update Customers 
+                        set Password = @newPassword 
+                        where Email = @userName and Password = @oldPassword";
+            }
+            using (var connection = OpenConnection())
+            {
+                var parameters = new
+                {
+                    userName = username,
+                    oldPassword = oldPassword,
+                    newPassword = newPassword
+                };
+                result = connection.Execute(sql: sql, param: parameters, commandType: System.Data.CommandType.Text) > 0;
+                connection.Close();
+            }
+            return result;
         }
     }
 }

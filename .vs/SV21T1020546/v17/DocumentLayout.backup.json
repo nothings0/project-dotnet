@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\views\\order\\shipping.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\views\\order\\shipping.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\views\\employee\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B33F7AB-C5B5-44C7-9317-D511135D7298}|SV21T1020546.DataLayers\\SV21T1020546.DataLayers.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.datalayers\\sqlserver\\employeedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B33F7AB-C5B5-44C7-9317-D511135D7298}|SV21T1020546.DataLayers\\SV21T1020546.DataLayers.csproj|solutionrelative:sv21t1020546.datalayers\\sqlserver\\employeedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,8 +23,8 @@
       "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.web\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{55A8F90D-695B-4DF6-80D4-C0F76DD49BF9}|SV21T1020546.Web\\SV21T1020546.Web.csproj|solutionrelative:sv21t1020546.web\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7B33F7AB-C5B5-44C7-9317-D511135D7298}|SV21T1020546.DataLayers\\SV21T1020546.DataLayers.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.datalayers\\sqlserver\\useraccountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B33F7AB-C5B5-44C7-9317-D511135D7298}|SV21T1020546.DataLayers\\SV21T1020546.DataLayers.csproj|solutionrelative:sv21t1020546.datalayers\\sqlserver\\useraccountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Order\\Details.cshtml",
-              "RelativeDocumentMoniker": "SV21T1020546.Web\\Views\\Order\\Details.cshtml",
-              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Order\\Details.cshtml",
-              "RelativeToolTip": "SV21T1020546.Web\\Views\\Order\\Details.cshtml",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAALcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-05T13:47:17.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "SV21T1020546.Web\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "SV21T1020546.Web\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAIwGUAAAAgAAAAAAAAAA==",
+              "Title": "EmployeeDAL.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.DataLayers\\SQLServer\\EmployeeDAL.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.DataLayers\\SQLServer\\EmployeeDAL.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.DataLayers\\SQLServer\\EmployeeDAL.cs",
+              "RelativeToolTip": "SV21T1020546.DataLayers\\SQLServer\\EmployeeDAL.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAuwJwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T13:29:29.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "SV21T1020546.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "SV21T1020546.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowCQAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T13:27:40.732Z",
+              "WhenOpened": "2024-12-06T02:57:20.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Shipping.cshtml",
-              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Order\\Shipping.cshtml",
-              "RelativeDocumentMoniker": "SV21T1020546.Web\\Views\\Order\\Shipping.cshtml",
-              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Order\\Shipping.cshtml",
-              "RelativeToolTip": "SV21T1020546.Web\\Views\\Order\\Shipping.cshtml",
-              "ViewState": "AgIAACMAAAAAAAAAAAAUwDYAAAAqAAAAAAAAAA==",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "RelativeToolTip": "SV21T1020546.Web\\Views\\Employee\\Edit.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-05T13:26:17.099Z",
+              "WhenOpened": "2024-12-06T02:55:54.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "SV21T1020546.Web\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAUwIgAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T02:35:58.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserAccountDAL.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.DataLayers\\SQLServer\\UserAccountDAL.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.DataLayers\\SQLServer\\UserAccountDAL.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.DataLayers\\SQLServer\\UserAccountDAL.cs",
+              "RelativeToolTip": "SV21T1020546.DataLayers\\SQLServer\\UserAccountDAL.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T02:05:48.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "SV21T1020546.Web\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAowBUAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T00:51:35.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "SV21T1020546.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "SV21T1020546.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAcwF0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T00:51:27.967Z",
               "EditorCaption": ""
             }
           ]
