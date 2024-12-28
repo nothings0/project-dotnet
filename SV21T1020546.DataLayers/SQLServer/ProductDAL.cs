@@ -312,6 +312,26 @@ namespace SV21T1020546.DataLayers.SQLServer
             return data;
         }
 
+        public List<Product> GetProducts(int limit, int offset)
+        {
+            List<Product> data = new List<Product>();
+            using (var connection = OpenConnection())
+            {
+                var sql = @"SELECT *
+                            FROM Products
+                            ORDER BY ProductId
+                            OFFSET @OFFSET ROWS FETCH NEXT @LIMIT ROWS ONLY";
+                var parameters = new
+                {
+                    OFFSET = offset,
+                    LIMIT = limit
+                };
+                data = connection.Query<Product>(sql, parameters, commandType: System.Data.CommandType.Text).ToList();
+                connection.Close();
+            }
+            return data;
+        }
+
         public bool Update(Product data)
         {
             bool result = false;

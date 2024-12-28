@@ -58,5 +58,7 @@ namespace SV21T1020546.DataLayers
         /// Xóa 1 mặt hàng ra khỏi đơn hàng
         /// </summary>
         bool DeleteDetail(int orderID, int productID);
+
+        List<Order> GetOrdersOfUser(int userId);
     }
 }

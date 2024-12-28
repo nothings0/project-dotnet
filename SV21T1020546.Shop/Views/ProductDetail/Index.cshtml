@@ -1,0 +1,144 @@
+﻿@model SV21T1020546.Shop.Models.ProductDetailModel
+
+<main class="main">
+    <!-- Single Products -->
+    <div class="small-container single-product">
+        <div class="product">
+            <div class="col-2">
+                <img src="images/gallery-1.jpg" width="100%" id="ProductImg" />
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images/gallery-1.jpg"
+                             width="100%"
+                             class="small-img" />
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/gallery-2.jpg"
+                             width="100%"
+                             class="small-img" />
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/gallery-3.jpg"
+                             width="100%"
+                             class="small-img" />
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images/gallery-4.jpg"
+                             width="100%"
+                             class="small-img" />
+                    </div>
+                </div>
+            </div>
+            <form class="col-2 frmAddToCart"
+                  action="~/Cart/AddToCart"
+                  method="post">
+                <input type="hidden" name="ProductID" value="@Model.ProductData.ProductID" />
+                <input type="hidden" name="ProductName" value="@Model.ProductData.ProductName" />
+                <input type="hidden" name="Photo" value="@Model.ProductData.Photo" />
+                <input type="hidden" name="Unit" value="@Model.ProductData.Unit" />
+                <input type="hidden" name="SalePrice" value="@Model.ProductData.Price" />
+                <h1>@Model.ProductData.ProductName</h1>
+                <div class="product_option">
+                    <p>Giá</p>
+                    <span>$50.00</span>
+                </div>
+
+                <div class="product_option" style="margin-top: 20px">
+                    <p>Chọn loại</p>
+                    <select>
+                        <option>Select Size</option>
+                        <option>XXL</option>
+                        <option>XL</option>
+                        <option>L</option>
+                        <option>M</option>
+                        <option>S</option>
+                    </select>
+                </div>
+                <div class="product_option" style="margin: 20px 0">
+                    <p>Số lượng</p>
+                    <div class="quantity">
+                        <span class="decrease">-</span>
+                        <input type="text" value="1" name="Quantity" />
+                        <span class="increase">+</span>
+                    </div>
+                </div>
+                <div>
+                    <button href="" class="btn btn-default" type="submit">Thêm vào giỏ</button>
+                    <button href="" class="btn btn-primary">Mua ngay</button>
+                </div>
+                <hr />
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br />
+                <p>
+                    Give your summer wardrobe a style upgrade with the HRX Men's
+                    Active T-Shirt. Team it with a pair of shorts for your morning
+                    workout or a denims for an evening out with the guys.
+                </p>
+            </form>
+        </div>
+    </div>
+    <!-- title -->
+    <div class="header_product">
+        <h2>All Products</h2>
+        <select>
+            <option>Default Sort</option>
+            <option>Sort By Price</option>
+            <option>Sort By Popularity</option>
+            <option>Sort By Rating</option>
+            <option>Sort By Sale</option>
+        </select>
+    </div>
+    <div class="gird">
+        @foreach(var item in Model.RelatedProducts)
+        {
+            <div class="col-4">
+                <a href="/ProductDetail/Index/@item.ProductID">
+                    <div class="product_image">
+                        <img src="@(string.IsNullOrEmpty(item.Photo)
+    ? "http://localhost:45443/images/products/nophoto.png"
+    : $"http://localhost:45443/images/products/{item.Photo}")"
+                             style="width:100%" alt="" />
+                    </div>
+                    <div class="product_desc">
+                        <h4>@item.ProductName</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <p>@item.Price</p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</main>
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $(".frmAddToCart").submit(function (e){
+            e.preventDefault();
+            var url= $(this).prop("action");
+            var method = $(this).prop("method");
+            var data = $(this).serializeArray();
+            $.ajax({
+                url: url,
+                type: method,
+                data: data,
+                success: function(result){
+                    if(result !==""){
+                        alert(result);
+                    }
+                    else{
+                        console.log("success")
+                        // showShoppingCart();
+                    }
+                }
+            });
+        })
+    })
+</script>
+}

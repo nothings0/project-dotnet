@@ -32,5 +32,7 @@ namespace SV21T1020546.DataLayers.SQLServer
         int AddAttribute(ProductAttribute data);
         bool UpdateAttribute(ProductAttribute data);
         bool DeleteAttribute(long attributeID);
+        List<Product> GetProducts(int limit, int offset);
+
     }
 }

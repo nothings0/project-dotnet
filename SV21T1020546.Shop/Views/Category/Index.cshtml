@@ -1,0 +1,56 @@
+﻿@model SV21T1020546.Shop.Models.ProductSearchInput
+
+<main class="main">
+    <div class="small-container">
+        <div class="header_product">
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                </h1>
+            </section>
+            <select>
+                <option>Default Sort</option>
+                <option>Sort By Price</option>
+                <option>Sort By Popularity</option>
+                <option>Sort By Rating</option>
+                <option>Sort By Sale</option>
+            </select>
+        </div>
+
+        <div id="searchResult">
+        </div>
+    </div>
+</main>
+
+@section scripts {
+    <script>
+        function doSearch(page) {
+            var searchCondition = {
+                Page: page,
+                PageSize: @Model.PageSize,
+                SearchValue: '@Model.SearchValue',
+                CategoryID: @Model.CategoryID,
+                SupplierID: @Model.SupplierID,
+                MinPrice: @Model.MinPrice,
+                MaxPrice: @Model.MaxPrice
+                    };
+
+            $.ajax({
+                url: `/Category/Search`,
+                type: "GET",
+                data: searchCondition,
+                success: function (data) {
+                    $("#searchResult").html(data);
+                }
+            });
+        };
+        $(document).ready(function () {
+            var a = @Model.Page
+                doSearch(a);
+            $("#frmSearchInput").submit(function (e) {
+                e.preventDefault();
+                doSearch(1);
+            })
+        });
+    </script>
+}

@@ -1,0 +1,106 @@
+﻿@model SV21T1020546.DomainModels.Customer
+<main class="flex main">
+    <div class="col-md-2 box">
+        <div class="sidebar_wrap">
+            <a href="/account">Tài khoản</a>
+            <a href="/invoice">Đơn mua</a>
+        </div>
+    </div>
+    <div class="col-md-10 box">
+        <div class="box-body content">
+            <form action="~/Employee/Save"
+                  class="form-horizontal"
+                  method="post"
+                  enctype="multipart/form-data">
+                <input type="hidden"
+                       name="@nameof(Model.CustomerID)"
+                       value="@Model.CustomerID" />
+                <div class="account-form-group">
+                    <label class="control-label col-sm-2">
+                        Họ và tên: @Html.ValidationMessage(nameof(Model.CustomerName), new
+                            { @style = "color:#f00" })
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               class="form-control"
+                               name="@nameof(Model.CustomerName)"
+                               value="@Model.CustomerName"
+                               autofocus />
+                    </div>
+                </div>
+                
+                <div class="account-form-group">
+                    <label class="control-label col-sm-2">Điện thoại:</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               class="form-control"
+                               name="@nameof(Model.Phone)"
+                               value="@Model.Phone" />
+                    </div>
+                </div>
+                <div class="account-form-group">
+                    <label class="control-label col-sm-2">
+                        Email: @Html.ValidationMessage(nameof(Model.Email), new
+                            {
+                                @style = "color:#f00"
+                            })
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="email"
+                               class="form-control"
+                               name="@nameof(Model.Email)"
+                               value="@Model.Email" />
+                        @Html.ValidationMessage("InvalidEmail", new
+                            {
+                                @style =
+                                 "color:#f00"
+                            })
+                    </div>
+                </div>
+                <div class="account-form-group">
+                    <label class="control-label col-sm-2">Tỉnh/Thành:</label>
+                    <div class="col-sm-10">
+                    <select class="form-control" name="@nameof(Model.Province)">
+                        <option value="">Chọn tỉnh thành</option>
+                        @foreach (var item in
+                        SV21T1020546.BusinessLayers.CommonDataService.ListOfProvinces())
+                        {
+                            if (item.ProvinceName == Model.Province)
+                            {
+                                <option value="@item.ProvinceName" selected>
+                                    @item.ProvinceName
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@item.ProvinceName">@item.ProvinceName</option>
+                            }
+                        }
+                    </select>
+                    </div>
+                    @Html.ValidationMessage(nameof(Model.Province), new
+                        {
+                            @style =
+                             "color:#f00"
+                        })
+                </div>
+                <div class="account-form-group">
+                    <label class="control-label col-sm-2">Địa chỉ:</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               class="form-control"
+                               name="@nameof(Model.Address)"
+                               value="@Model.Address" />
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-floppy-o"></i>
+                        Lưu dữ liệu
+                    </button>
+                    <a href="~/Employee" class="btn btn-default"> Quay lại </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

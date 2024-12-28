@@ -2,6 +2,7 @@
 using SV21T1020546.BusinessLayers;
 using SV21T1020546.DataLayers.SQLServer;
 using SV21T1020546.DomainModels;
+using System.Collections.Generic;
 
 namespace SV21T1020546.BusinessLayers
 {
@@ -20,6 +21,11 @@ namespace SV21T1020546.BusinessLayers
         {
             rowCount = productDB.Count(searchValue, categoryID, suplierID, minPrice, maxPrice);
             return productDB.List(page, pageSize, searchValue, categoryID, suplierID, minPrice, maxPrice);
+        }
+
+        public static List<Product> GetProducts(int limit, int offset)
+        {
+            return productDB.GetProducts(limit, offset);
         }
         public static Product? GetProduct(int productID)
         {

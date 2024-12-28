@@ -1,0 +1,53 @@
+﻿<div class="header">
+    <div class="search">
+        <div class="search__container">
+            <div class="search__left">
+                <div class="logo"><a href="/">Digitit.</a></div>
+                <div class="search__box">
+                    <div class="search__box__input">
+                        <input type="text"
+                               placeholder="Tìm kiếm sản phẩm ..."
+                               value="" />
+                    </div>
+                    <div class="search__box__icon">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="search__right">
+                <a href="/login">
+                    <div class="account-btn">
+                        <i class="fa fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </div>
+                </a><a href="/cart">
+                    <div class="cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>0</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div class="bottom-bar__container">
+            <div class="bottom-bar__category">
+                <button class="bottom-bar__category__main dropdown-toggle"
+                        data-toggle="dropdown">
+                    <i class="fa fa-bars"></i>
+                    <span>shop categories</span>
+                    <i class="fa fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    @foreach(var item in SV21T1020546.BusinessLayers.CommonDataService.ListOfCategories(out int a))
+                    {
+                    <li><a href="/Category/Index/@item.CategoryID">@item.CategoryName</a></li>
+                    }
+                </ul>
+            </div>
+            <div class="bottom-bar__nav">
+                <a class="bottom-bar__nav__link" href="/">home</a><a class="bottom-bar__nav__link" href="/product">our store</a><a class="bottom-bar__nav__link" href="/">blogs</a><a class="bottom-bar__nav__link" href="/">contact</a>
+            </div>
+        </div>
+    </div>
+</div>

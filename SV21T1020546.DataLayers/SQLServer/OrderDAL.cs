@@ -1,5 +1,7 @@
-﻿using Dapper;
+﻿using Azure;
+using Dapper;
 using SV21T1020546.DomainModels;
+using System.Buffers;
 
 namespace SV21T1020546.DataLayers.SQLServer
 {
@@ -148,6 +150,24 @@ namespace SV21T1020546.DataLayers.SQLServer
             }
             return data;
 
+        }
+
+        public List<Order> GetOrdersOfUser(int userId)
+        {
+            List<Order> list = new List<Order>();
+            using (var connection = OpenConnection())
+            {
+                var sql = @"SELECT *
+                            FROM Orders
+                            WHERE Orders.CustomerID = @CustomerID";
+                var parameters = new
+                {
+                    CustomerID = userId,
+                };
+                list = connection.Query<Order>(sql, parameters, commandType: System.Data.CommandType.Text).ToList();
+                connection.Close();
+            }
+            return list;
         }
 
         public IList<Order> List(int page = 1, int pageSize = 0, int status = 0, DateTime? fromTime = null, DateTime? toTime = null, string searchValue = "")

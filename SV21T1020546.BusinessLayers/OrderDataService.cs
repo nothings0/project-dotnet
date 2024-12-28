@@ -30,6 +30,11 @@ namespace SV21T1020546.BusinessLayers
         {
             return orderDB.Get(orderID);
         }
+
+        public static List<Order>? GetOrdersOfUser(int userId)
+        {
+            return orderDB.GetOrdersOfUser(userId);
+        }
         /// <summary> 
         /// Khởi tạo 1 đơn hàng mới (tạo đơn hàng mới ở trạng thái Init).   /// Hàm trả về mã của đơn hàng được tạo mới 
         /// </summary> 

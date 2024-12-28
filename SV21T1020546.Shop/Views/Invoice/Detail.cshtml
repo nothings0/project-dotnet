@@ -1,0 +1,93 @@
+﻿@model SV21T1020546.DomainModels.Order
+
+<main class="flex main">
+    <div class="col-md-2 box">
+        <div class="sidebar_wrap">
+            <a href="/account">Tài khoản</a>
+            <a href="/invoice">Đơn mua</a>
+        </div>
+    </div>
+    <div class="col-md-10 box">
+        <div class="box-body content">
+            <div class="purchase_header">
+                <h2>Chi tiết đơn hàng</h2>
+                <div>
+                    <span>MÃ ĐƠN HÀNG. @Model.OrderID</span> |
+                    <span>Giao hàng thành công</span>
+                </div>
+            </div>
+            <div class="purchase_content">
+                <div class="purchase_top">
+                    <div class="purchase_left">
+                        <h3>Địa chỉ nhận hàng</h3>
+                        <div>
+                            <h4>@Model.CustomerName</h4>
+                            <p>@Model.CustomerPhone</p>
+                            <p>
+                                @Model.CustomerAddress
+                            </p>
+                        </div>
+                    </div>
+                    <div class="purchase_right">
+                        <div class="line"></div>
+                        <div class="purchase_status">
+                            <div class="purchase_time">@Model.OrderTime.ToString("dd/MM/yyyy HH:mm")</div>
+                            <div class="purchase_status_desc">Đặt hàng</div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="purchase_status">
+                            <div class="purchase_time">@Model.AcceptTime?.ToString("dd/MM/yyyy HH:mm")</div>
+                            <div class="purchase_status_desc">Shop đang chuẩn bị hàng</div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="purchase_status">
+                            <div class="purchase_time">@Model.ShippedTime?.ToString("dd/MM/yyyy HH:mm")</div>
+                            <div class="purchase_status_desc">Đang giao hàng</div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="purchase_status">
+                            <div class="purchase_time">@Model.FinishedTime?.ToString("dd/MM/yyyy HH:mm")</div>
+                            <div class="purchase_status_desc">Hoàn thành</div>
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="purchase_bot">
+                    <div class="purchase_product">
+                        <div class="purchase_product_item">
+                            <div class="product">
+                                <img src="./images/buy-1.jpg" alt="" />
+                                <div class="desc">
+                                    <h3>Combo 2 mat na duong da rebpibl</h3>
+                                    <span>x2</span>
+                                </div>
+                            </div>
+                            <div class="price">₫146.000</div>
+                        </div>
+                        <div class="purchase_product_item">
+                            <div class="product">
+                                <img src="./images/buy-1.jpg" alt="" />
+                                <div class="desc">
+                                    <h3>Combo 2 mat na duong da rebpibl</h3>
+                                    <span>x2</span>
+                                </div>
+                            </div>
+                            <div class="price">₫146.000</div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="purchase_bottom">
+                        <div class="total">
+                            Thành tiền: <span class="">₫18.000</span>
+                        </div>
+                        <div class="button">
+                            <button class="btn btn-primary">Xem chi tiết</button>
+                            <button class="btn">Hủy đơn</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

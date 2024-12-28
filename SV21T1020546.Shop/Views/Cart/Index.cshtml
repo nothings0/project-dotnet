@@ -1,0 +1,62 @@
+﻿@model List<SV21T1020546.Shop.Models.CartItem>
+
+<main class="main">
+    <!-- Cart items details -->
+    <div class="small-container cart-page">
+        <h3 class="heading">Giỏ hàng</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="padding: 0 20px">
+                        <input type="checkbox" id="selectAll" />
+                    </th>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody class="cart-body">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="selectedProducts" value="@item.ProductID" />
+                        </td>
+                        <td>
+                            <div class="cart-info">
+                                <img src="images/buy-1.jpg" alt="Product Image" />
+                                <div>
+                                    <p>@item.ProductName</p>
+                                    <small>Price: @item.SalePrice</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <span class="decrease">-</span>
+                                <input type="text" value="@item.Quantity" />
+                                <span class="increase">+</span>
+                            </div>
+                        </td>
+                        <td>@item.TotalPrice</td>
+                        <td>
+                            <button class="btn btn-primary">Xóa</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+          ">
+            <button class="btn btn-primary">
+                <a href="checkout.html">Mua ngay</a>
+            </button>
+        </div>
+    </div>
+</main>
