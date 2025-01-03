@@ -1,0 +1,87 @@
+﻿@model SV21T1020546.DomainModels.Customer
+
+<main class="flex main">
+    <div class="col-md-2">
+        <div class="box" style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="/Account" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account") ? "active" : "")">Tài khoản</a>
+            <a href="/Invoice" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Invoice") ? "active" : "")">Đơn mua</a>
+            <a href="/ChangePassword" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account/ChangePassword") ? "active" : "")">Đổi mật khẩu</a>
+        </div>
+    </div>
+    <div class="box col-md-10">
+        <div class="box-body">
+            <form action="~/Account/Save" method="POST" class="form-horizontal">
+                <input type="hidden" name="@nameof(Model.CustomerID)" value="@Model.CustomerID">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tên khách hàng:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" autofocus name="@nameof(Model.CustomerName)" value="@Model.CustomerName">
+                        @Html.ValidationMessage(nameof(Model.CustomerName), new { @style = "color:#f00" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tên giao dịch:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="@nameof(Model.ContactName)" value="@Model.ContactName">
+                        @Html.ValidationMessage(nameof(Model.ContactName), new { @style = "color:#f00" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Điện thoại:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="@nameof(Model.Phone)" value="@Model.Phone">
+                        @Html.ValidationMessage(nameof(Model.Phone), new { @style = "color:#f00" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="@nameof(Model.Email)" value="@Model.Email">
+                        @Html.ValidationMessage(nameof(Model.Email), new { @style = "color:#f00" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Tỉnh/Thành:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="@nameof(Model.Province)">
+                            <option value="">Chọn tỉnh thành</option>
+                            @foreach (var item in SV21T1020546.BusinessLayers.CommonDataService.ListOfProvinces())
+                            {
+                                if (item.ProvinceName == Model.Province)
+                                {
+                                    <option value="@item.ProvinceName" selected>@item.ProvinceName</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.ProvinceName">@item.ProvinceName</option>
+                                }
+                            }
+
+                        </select>
+                        @Html.ValidationMessage(nameof(Model.Province), new { @style = "color:#f00" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">Địa chỉ:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="@nameof(Model.Address)" value="@Model.Address">
+                        @Html.ValidationMessage(nameof(Model.Address), new { @style = "color:#f00" })
+                    </div>
+                </div>
+
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i>Lưu</button>
+                    <a href="~/Account" class="btn btn-default">
+                        Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

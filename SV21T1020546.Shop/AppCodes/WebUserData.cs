@@ -6,10 +6,12 @@ namespace SV21T1020546.Shop
     public class WebUserData
     {
         public string UserId { get; set; } = "";
-
         public string UserName { get; set; } = "";
         public string DisplayName { get; set; } = "";
         public string Photo { get; set; } = "";
+        public string Address { get; set; } = "";
+        public string Province { get; set; } = "";
+        public string Phone { get; set; } = "";
         public List<string>? Roles { get; set; }
 
         public ClaimsPrincipal CreatePrincipal()
@@ -19,7 +21,10 @@ namespace SV21T1020546.Shop
                 new Claim(nameof(UserId), UserId),
                 new Claim(nameof(UserName), UserName),
                 new Claim(nameof(DisplayName), DisplayName),
-                new Claim(nameof(Photo), Photo)
+                new Claim(nameof(Photo), Photo),
+                new Claim(nameof(Address), Address),
+                new Claim(nameof(Phone), Phone),
+                new Claim(nameof(Province), Province),
             };
             if (Roles != null)
                 foreach(var role in Roles)

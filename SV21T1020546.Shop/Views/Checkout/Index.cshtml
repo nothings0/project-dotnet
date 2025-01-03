@@ -1,0 +1,130 @@
+﻿@model List<SV21T1020546.Shop.Models.CartItem>
+@{
+    ViewBag.Title = "Thanh toán";
+}
+<main class="main">
+    @{
+        var userData = User.GetUserData();
+        var data = SV21T1020546.BusinessLayers.CommonDataService.GetCustomer(int.Parse(userData.UserId));
+        decimal totalAmount = 0;
+    }
+    <!-- Cart items details -->
+    <form id="frmOrderInit" action="~/Cart/Init" method="post" class="small-container cart-page">
+        <input type="hidden" name="customerID" value="@userData.UserId" />
+        <input type="hidden" name="deliveryProvince" value="@data.Province" />
+        <input type="hidden" name="deliveryAddress" value="@data.Address" />
+        <h3 class="heading">Thanh toán</h3>
+
+        <div class="small-container"
+             style="background-color: #fff; padding: 8px 10px; margin-top: 20px;">
+            <div style="display: flex; align-items: center; justify-content: space-between">
+                <div>
+                    <h2>Địa chỉ nhận hàng</h2>
+                    <p>
+                        <b>@data.CustomerName</b> (@data.Phone) | @data.Address, @data.Province
+                    </p>
+                </div>
+                <a href="~/Account/Edit" class="btn btn-default">Chỉnh sửa</a>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody class="cart-body">
+                @if (Model == null || !Model.Any())
+                {
+                    <tr>
+                        <td colspan="5" style="text-align: center;">Không có sản phẩm</td>
+                    </tr>
+                }
+                else
+                {
+                @foreach (var item in Model)
+                {
+                    totalAmount += item.TotalPrice;
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                               <img src="@(string.IsNullOrEmpty(@item.Photo)
+                                ? "http://localhost:45443/images/products/nophoto.png"
+                                : $"http://localhost:45443/images/products/{@item.Photo}")"
+                                         style="width:100px" alt="" />
+                                <div>
+                                    <p>@item.ProductName</p>
+                                    <small>Price: @item.SalePrice.ToString("#,##0")</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>@item.TotalPrice.ToString("#,##0")</td>
+                        <td>
+                            <button class="btn btn-primary">Xóa</button>
+                        </td>
+                    </tr>
+                }
+                }
+            </tbody
+        </table>
+        <p id="error-message" style="color: #f00; margin: 20px 0; text-align: center; background: #fff"></p>
+        <div class="checkout_bottom">
+            <div class="transport">
+                <h3>Phương thức thanh toán</h3>
+                <b>Thanh toán khi nhận hàng</b>
+            </div>
+            <div class="total-price">
+                <table style="width: 100%; background: #fff">
+                    <tr>
+                        <td style="text-align: right;">Tổng tiền</td>
+                        <td style="text-align: right;">@totalAmount.ToString("#,##0")</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Thuế</td>
+                        <td style="text-align: right;">0</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Thanh toán</td>
+                        <td style="text-align: right;">@totalAmount.ToString("#,##0")</td>
+                    </tr>
+                </table>
+            </div>
+            <hr />
+            <div class="checkout_button">
+                <button class="btn btn-primary">Đặt hàng</button>
+            </div>
+        </div>
+    </form>
+</main>
+
+@section scripts {
+
+<script>
+    $(document).ready(function () {
+        $("#frmOrderInit").submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: $(this).prop("action"),
+                type: $(this).prop("method"),
+                data: $(this).serializeArray(),
+
+                success: function (result) {
+                    if (isNaN(result)) {
+                        $("#error-message").html(result);
+                    }
+                    else {
+                        window.location.href = "Invoice/Detail/" + result;
+                    }
+                }
+            });
+        })
+    })
+</script>
+}

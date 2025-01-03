@@ -5,8 +5,8 @@ C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.AssemblyInfoInputs.cache
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.AssemblyInfo.cs
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.csproj.CoreCompileInputs.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.sourcelink.json
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.dll
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\refint\SV21T1020546.DomainModels.dll
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.pdb
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\ref\SV21T1020546.DomainModels.dll
-C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.DomainModels\obj\Debug\net8.0\SV21T1020546.DomainModels.sourcelink.json

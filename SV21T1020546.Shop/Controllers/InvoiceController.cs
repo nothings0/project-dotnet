@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SV21T1020546.BusinessLayers;
-
+using Microsoft.AspNetCore.Authorization;
 namespace SV21T1020546.Shop.Controllers
 {
+    [Authorize]
     public class InvoiceController : Controller
     {
         public IActionResult Index()

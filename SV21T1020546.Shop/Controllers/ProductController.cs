@@ -11,6 +11,7 @@ namespace SV21T1020546.Shop.Controllers
     {
         private const int PAGE_SIZE = 40;
         private const string PRODUCT_SEARCH_CONDITION = "StoreSearchCondition";
+        private const string PRODUCT_SEARCH_CONDITION_2 = "StoreSearchCondition2";
         public IActionResult Index()
         {
             ViewBag.Title = "Danh sách sản phẩm";
@@ -47,6 +48,27 @@ namespace SV21T1020546.Shop.Controllers
                 Data = data
             };
             ApplicationContext.SetSessionData(PRODUCT_SEARCH_CONDITION, condition);
+            return View(model);
+        }
+
+        public IActionResult SearchProduct(ProductSearchInput condition)
+        {
+            ViewBag.Title = "Kết quả tìm kiếm";
+            int rowCount;
+            var data = ProductDataService.ListProducts(out rowCount, condition.Page, condition.PageSize, condition.SearchValue ?? "", condition.CategoryID, condition.SupplierID, condition.MinPrice, condition.MaxPrice);
+            ProductSearchResult model = new ProductSearchResult()
+            {
+                Page = condition.Page,
+                PageSize = condition.PageSize,
+                SearchValue = condition.SearchValue ?? "",
+                CategoryID = condition.CategoryID,
+                SupplierID = condition.SupplierID,
+                MinPrice = condition.MinPrice,
+                MaxPrice = condition.MaxPrice,
+                RowCount = rowCount,
+                Data = data
+            };
+            ApplicationContext.SetSessionData(PRODUCT_SEARCH_CONDITION_2, condition);
             return View(model);
         }
     }

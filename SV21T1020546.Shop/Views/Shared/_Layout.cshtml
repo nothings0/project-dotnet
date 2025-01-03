@@ -104,6 +104,26 @@
             });
         })
     </script>
+    <script>
+        function updateCartCount() {
+            $.ajax({
+                url: `/Cart/CountCart`,
+                type: "GET",
+                success: function (result) {
+                    console.log(result)
+                    $("#count").html(result.cartCount);
+                },
+                error: function (error) {
+                    $("#count").html(0);
+                    console.error("Error updating cart count:", error);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            updateCartCount();
+        });
+    </script>
     @RenderSection("scripts", false)
 </body>
 </html>

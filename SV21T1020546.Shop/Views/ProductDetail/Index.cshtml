@@ -5,8 +5,11 @@
     <div class="small-container single-product">
         <div class="product">
             <div class="col-2">
-                <img src="images/gallery-1.jpg" width="100%" id="ProductImg" />
-
+                <img src="@(string.IsNullOrEmpty(@Model.ProductData.Photo)
+    ? "http://localhost:45443/images/products/nophoto.png"
+    : $"http://localhost:45443/images/products/{@Model.ProductData.Photo}")"
+                     id="ProductImg"
+                     style="width:100%" alt="" />
                 <div class="small-img-row">
                     <div class="small-img-col">
                         <img src="images/gallery-1.jpg"
@@ -79,6 +82,9 @@
         </div>
     </div>
     <!-- title -->
+    <div class="small-container">
+
+    
     <div class="header_product">
         <h2>All Products</h2>
         <select>
@@ -89,7 +95,7 @@
             <option>Sort By Sale</option>
         </select>
     </div>
-    <div class="gird">
+    <div class="grid">
         @foreach(var item in Model.RelatedProducts)
         {
             <div class="col-4">
@@ -115,8 +121,9 @@
             </div>
         }
     </div>
+    </div>
 </main>
-@section Scripts {
+@section scripts {
 <script>
     $(document).ready(function () {
         $(".frmAddToCart").submit(function (e){
@@ -129,16 +136,35 @@
                 type: method,
                 data: data,
                 success: function(result){
-                    if(result !==""){
+                    if(result !== ""){
                         alert(result);
                     }
                     else{
                         console.log("success")
-                        // showShoppingCart();
+                        updateCartCount()
                     }
                 }
             });
         })
+
+        const decreaseBtn = document.querySelector(".decrease");
+        const increaseBtn = document.querySelector(".increase");
+        const inputField = document.querySelector(".quantity input");
+
+        // Gắn sự kiện click cho nút "-"
+        decreaseBtn.addEventListener("click", () => {
+            let currentValue = parseInt(inputField.value) || 0; // Lấy giá trị hiện tại
+            if (currentValue > 0) {
+                // Không cho giá trị giảm dưới 0
+                inputField.value = currentValue - 1;
+            }
+        });
+
+        // Gắn sự kiện click cho nút "+"
+        increaseBtn.addEventListener("click", () => {
+            let currentValue = parseInt(inputField.value) || 0; // Lấy giá trị hiện tại
+            inputField.value = currentValue + 1; // Tăng giá trị
+        });
     })
 </script>
 }

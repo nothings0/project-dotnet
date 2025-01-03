@@ -2,28 +2,52 @@
     <div class="search">
         <div class="search__container">
             <div class="search__left">
-                <div class="logo"><a href="/">Digitit.</a></div>
-                <div class="search__box">
+                <div class="logo"><a href="~/">PVN</a></div>
+                <form class="search__box" id="frmSearchInput" action="~/Product/SearchProduct" method="get">
+                    <input type="hidden" name="PageSize" value="20"/>
                     <div class="search__box__input">
                         <input type="text"
                                placeholder="Tìm kiếm sản phẩm ..."
-                               value="" />
+                               name="SearchValue" value="" />
                     </div>
-                    <div class="search__box__icon">
+                    <button class="search__box__icon" type="submit">
                         <i class="fa fa-search"></i>
-                    </div>
-                </div>
+                    </button>
+                </form>
             </div>
             <div class="search__right">
-                <a href="/login">
-                    <div class="account-btn">
-                        <i class="fa fa-user"></i>
-                        <span>Đăng nhập</span>
-                    </div>
-                </a><a href="/cart">
+                @{
+                    var userData = User.GetUserData();
+                    if (userData != null)
+                    {
+                        <div class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img class="user-image" alt="User Image" style="width: 40px; border-radius: 50%"
+                                     src="@(string.IsNullOrEmpty(userData.Photo) ? Url.Content("~/themes/dist/img/user.jpg") : Url.Content($"~/images/employees/{userData.Photo}"))" />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="~/Account">Tài khoản</a></li>
+                                <li><a href="~/Invoice">Đơn mua</a></li>
+                                <li><a href="~/Account/ChangePassword">Đổi mật khẩu</a></li>
+                                <hr />
+                                <li><a href="~/Auth/Logout">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="~/Auth/Login">
+                            <div class="account-btn">
+                                <i class="fa fa-user"></i>
+                                <span>Đăng nhập</span>
+                            </div>
+                        </a>
+                    }
+                }
+                <a href="~/Cart">
                     <div class="cart">
                         <i class="fa fa-shopping-cart"></i>
-                        <span>0</span>
+                        <span id="count"></span>
                     </div>
                 </a>
             </div>
@@ -35,7 +59,7 @@
                 <button class="bottom-bar__category__main dropdown-toggle"
                         data-toggle="dropdown">
                     <i class="fa fa-bars"></i>
-                    <span>shop categories</span>
+                    <span>Danh mục</span>
                     <i class="fa fa-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu">
@@ -46,7 +70,10 @@
                 </ul>
             </div>
             <div class="bottom-bar__nav">
-                <a class="bottom-bar__nav__link" href="/">home</a><a class="bottom-bar__nav__link" href="/product">our store</a><a class="bottom-bar__nav__link" href="/">blogs</a><a class="bottom-bar__nav__link" href="/">contact</a>
+                <a class="bottom-bar__nav__link" href="/">Trang chủ</a>
+                <a class="bottom-bar__nav__link" href="/product">Sản phẩm</a>
+                <a class="bottom-bar__nav__link" href="#">Blogs</a>
+                <a class="bottom-bar__nav__link" href="#">Liên hệ</a>
             </div>
         </div>
     </div>

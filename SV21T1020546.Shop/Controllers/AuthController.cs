@@ -12,7 +12,13 @@ namespace SV21T1020546.Shop.Controllers
     {
         [AllowAnonymous]
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Register()
         {
             return View();
         }
@@ -32,7 +38,7 @@ namespace SV21T1020546.Shop.Controllers
 
             // Check username && password
 
-            var userAccount = UserAccountService.Authorize(UserTypes.Employee, username, password);
+            var userAccount = UserAccountService.Authorize(UserTypes.Customer, username, password);
             if (userAccount == null)
             {
                 ModelState.AddModelError("Error", "Đăng nhập không thành công");
@@ -45,6 +51,9 @@ namespace SV21T1020546.Shop.Controllers
                 DisplayName = userAccount.DisplayName,
                 Photo = userAccount.Photo,
                 UserName = userAccount.UserName,
+                Address = userAccount.Address,
+                Phone = userAccount.Phone,
+                Province = userAccount.Province,
                 Roles = userAccount.RoleNames?.Split(",").ToList()
             };
 

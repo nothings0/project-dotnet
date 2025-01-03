@@ -18,12 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.Shop
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Account/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Auth/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
+[C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Cart/Index.cshtml]
@@ -36,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Category/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Checkout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Home/Index.cshtml]
@@ -64,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Product/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Product/SearchProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTZWFyY2hQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pv/source/repos/SV21T1020546/SV21T1020546.Shop/Views/Shared/Error.cshtml]

@@ -10,9 +10,9 @@ C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.AssemblyInfoInputs.cache
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.AssemblyInfo.cs
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.csproj.CoreCompileInputs.cache
+C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.sourcelink.json
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T102.3176ED8D.Up2Date
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.dll
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\refint\SV21T1020546.BusinessLayers.dll
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.pdb
 C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\ref\SV21T1020546.BusinessLayers.dll
-C:\Users\pv\source\repos\SV21T1020546\SV21T1020546.BusinessLayers\obj\Debug\net8.0\SV21T1020546.BusinessLayers.sourcelink.json

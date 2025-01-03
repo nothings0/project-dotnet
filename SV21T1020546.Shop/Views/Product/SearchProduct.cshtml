@@ -1,0 +1,96 @@
+﻿@model SV21T1020546.Shop.Models.ProductSearchResult
+<main class="main">
+    <div class="small-container">
+        <div class="header_product">
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                </h1>
+            </section>
+            <select>
+                <option>Default Sort</option>
+                <option>Sort By Price</option>
+                <option>Sort By Popularity</option>
+                <option>Sort By Rating</option>
+                <option>Sort By Sale</option>
+            </select>
+        </div>
+
+        <div id="searchResult">
+            <div class="grid">
+                @foreach (var item in Model.Data)
+                {
+                    <div class="col-4">
+                        <a href="/ProductDetail/Index/@item.ProductID">
+                            <div class="product_image">
+                                <img src="@(string.IsNullOrEmpty(item.Photo)
+    ? "http://localhost:45443/images/products/nophoto.png"
+    : $"http://localhost:45443/images/products/{item.Photo}")"
+                                     style="width:100%" alt="" />
+                            </div>
+                            <div class="product_desc">
+                                <h4>@item.ProductName</h4>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <p>@item.Price</p>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="text-center">
+                <ul class="pagination">
+                    @for (int p = 1; p <= Model.PageCount; p++)
+                    {
+                        if (p == Model.Page)
+                        {
+                            <li class="active"><a href="#">@p</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="javascript:;" onclick="doSearch(@p)">@p</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section scripts {
+    <script>
+        function doSearch(page) {
+            var searchCondition = {
+                Page: page,
+                PageSize: @Model.PageSize,
+                SearchValue: @Model.SearchValue,
+                CategoryID: @Model.CategoryID,
+                SupplierID: @Model.SupplierID,
+                MinPrice: @Model.MinPrice,
+                MaxPrice: @Model.MaxPrice
+            };
+
+            $.ajax({
+                url: `/Product/Search`,
+                type: "GET",
+                data: searchCondition,
+                success: function (data) {
+                    $("#searchResult").html(data);
+                }
+            });
+        };
+        $(document).ready(function () {
+            var a = @Model.Page
+                doSearch(a);
+            $("#frmSearchInput").submit(function (e) {
+                e.preventDefault();
+                doSearch(1);
+            })
+        });
+    </script>
+}

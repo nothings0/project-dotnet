@@ -23,6 +23,9 @@ namespace SV21T1020546.Shop
                 userData.UserName = principal.FindFirstValue(nameof(userData.UserName)) ?? "";
                 userData.DisplayName = principal.FindFirstValue(nameof(userData.DisplayName)) ?? "";
                 userData.Photo = principal.FindFirstValue(nameof(userData.Photo)) ?? "";
+                userData.Province = principal.FindFirstValue(nameof(userData.Province)) ?? "";
+                userData.Address = principal.FindFirstValue(nameof(userData.Address)) ?? "";
+                userData.Phone = principal.FindFirstValue(nameof(userData.Phone)) ?? "";
 
                 userData.Roles = new List<string>();
                 foreach (var role in principal.FindAll(ClaimTypes.Role))

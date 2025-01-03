@@ -22,18 +22,25 @@ namespace SV21T1020546.DataLayers.SQLServer
             if (userTypes == UserTypes.Employee)
             {
                 sql = @"select EmployeeID as UserId,
-                                   Email as UserName,
-                                   FullName as DisplayName,
-                                   Photo,
-                                   RoleNames
+                                    Email as UserName,
+                                    FullName as DisplayName,
+                                    Photo,
+                                    Phone,
+                                    Address,
+		                            N'' as Province,
+                                    RoleNames
                             from Employees
                             where Email = @Email and Password = @Password";
-            }else if(userTypes == UserTypes.Customer)
+            }
+            else if(userTypes == UserTypes.Customer)
             {
                 sql = @"select CustomerID as UserId,
                                    Email as UserName,
                                    CustomerName as DisplayName,
                                    N'' as Photo,
+                                    Phone,
+                                    Address,
+                                    Province,
                                    N'' as RoleNames
                             from Customers
                             where Email = @Email and Password = @Password";

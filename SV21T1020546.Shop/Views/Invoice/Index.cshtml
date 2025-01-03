@@ -1,9 +1,11 @@
 ﻿@model List<SV21T1020546.DomainModels.Order>
+
 <main class="flex main">
-    <div class="col-md-2 box">
-        <div class="sidebar_wrap">
-            <a href="/Account">Tài khoản</a>
-            <a href="/Invoice">Đơn mua</a>
+    <div class="col-md-2">
+        <div class="box" style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="/Account" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account") ? "active" : "")">Tài khoản</a>
+            <a href="/Invoice" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Invoice") ? "active" : "")">Đơn mua</a>
+            <a href="/ChangePassword" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account/ChangePassword") ? "active" : "")">Đổi mật khẩu</a>
         </div>
     </div>
     <div class="col-md-10 box">
@@ -26,13 +28,16 @@
                                 {
                                     <div class="purchase_product_item">
                                         <div class="product">
-                                            <img src="./images/buy-1.jpg" alt="" />
+                                            <img src="@(string.IsNullOrEmpty(@invoice.Photo)
+    ? "http://localhost:45443/images/products/nophoto.png"
+    : $"http://localhost:45443/images/products/{@invoice.Photo}")"
+                                                 style="width:100px" alt="" />
                                             <div class="desc">
                                                 <h3>@invoice.ProductName</h3>
                                                 <span>@invoice.Quantity</span>
                                             </div>
                                         </div>
-                                        <div class="price">₫146.000</div>
+                                        <div class="price">@invoice.SalePrice.ToString("#,##0")</div>
                                     </div>
                                 }
                             </div>
@@ -60,13 +65,16 @@
                                     {
                                         <div class="purchase_product_item">
                                             <div class="product">
-                                                <img src="./images/buy-1.jpg" alt="" />
+                                                <img src="@(string.IsNullOrEmpty(@invoice.Photo)
+    ? "http://localhost:45443/images/products/nophoto.png"
+    : $"http://localhost:45443/images/products/{@invoice.Photo}")"
+                                                     style="width:100px" alt="" />
                                                 <div class="desc">
                                                     <h3>@invoice.ProductName</h3>
                                                     <span>@invoice.Quantity</span>
                                                 </div>
                                             </div>
-                                            <div class="price">₫146.000</div>
+                                            <div class="price">@invoice.SalePrice.ToString("#,##0")</div>
                                         </div>
                                     }
                                 </div>

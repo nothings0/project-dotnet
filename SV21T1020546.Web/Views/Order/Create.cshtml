@@ -36,7 +36,6 @@
             <div id="shoppingCart" class="table-responsive">
 
             </div>
-            
 
             <!-- Nhập khách hàng, nhân viên phụ trách và khởi tạo đơn hàng -->
             <form id="frmOrderInit" action="~/Order/Init" method="post" class="form-horizontal">
@@ -48,9 +47,9 @@
                             <option value="0">-- Chọn khách hàng --</option>
                             @foreach (var item in SV21T1020546.BusinessLayers.CommonDataService.ListOfCustomers(out int rowCount))
                             {
-                                    <option value="@item.CustomerID">
-                                        @item.CustomerName
-                                    </option>
+                                <option value="@item.CustomerID">
+                                    @item.CustomerName
+                                </option>
                             }
                         </select>
                     </div>
