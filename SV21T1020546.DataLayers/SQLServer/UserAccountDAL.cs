@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SV21T1020546.DataLayers.SQLServer
 {
@@ -88,6 +89,33 @@ namespace SV21T1020546.DataLayers.SQLServer
                 connection.Close();
             }
             return result;
+        }
+
+        public int Register(string username, string password)
+        {
+            int id = 0;
+
+            using (var connection = OpenConnection())
+            {
+                var sql = @"if exists(select * from Customers where Email = @Email)
+                            select -1
+                            else
+                                begin
+                                    insert into Customers(CustomerName, ContactName, Email, Password)
+                                    values (@CustomerName, @ContactName, @Email, @Password)
+                                    select SCOPE_IDENTITY()
+                                end";
+                var parameters = new
+                {
+                    CustomerName = " ",
+                    ContactName = " ",
+                    Email = username,
+                    Password = password,
+                };
+                id = connection.ExecuteScalar<int>(sql, parameters, commandType: System.Data.CommandType.Text);
+                connection.Close();
+            }
+            return id;
         }
     }
 }

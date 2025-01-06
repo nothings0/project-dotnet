@@ -20,8 +20,8 @@ internal class Program
                         .AddCookie(option =>
                         {
                             option.Cookie.Name = "AuthenticationCookie";
-                            option.LoginPath = "/Auth/Login";
-                            option.AccessDeniedPath = "/Auth/AccessDenined";
+                            option.LoginPath = "/Account/Login";
+                            option.AccessDeniedPath = "/Account/AccessDenined";
                             option.ExpireTimeSpan = TimeSpan.FromDays(360);
                         });
         builder.Services.AddSession(option =>

@@ -1,0 +1,143 @@
+﻿@model List<SV21T1020546.Shop.Models.CartItem>
+
+@{
+    Layout = null;
+}
+
+<table>
+    <thead>
+        <tr>
+            <th style="padding: 0 20px">
+            </th>
+            <th>Sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody class="cart-body">
+        @if (Model == null || !Model.Any())
+        {
+            <tr>
+                <td colspan="5" style="text-align: center;">Không có sản phẩm</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="hidden" name="selectedProducts" value="@item.ProductID" />
+                    </td>
+                    <td>
+                        <div class="cart-info">
+                            <img src="@(string.IsNullOrEmpty(@item.Photo)
+                                ? "http://localhost:45443/images/products/nophoto.png"
+                                : $"http://localhost:45443/images/products/{@item.Photo}")"
+                                 style="width:100px" alt="" />
+                            <div>
+                                <p>@item.ProductName</p>
+                                <small>Price: @item.SalePrice.ToString("#,##0")</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="quantity">
+                            <span class="decrease">-</span>
+                            <input type="text" value="@item.Quantity" />
+                            <span class="increase">+</span>
+                        </div>
+                    </td>
+                    <td>@((item.SalePrice * item.Quantity).ToString("C0"))</td>
+                    <td>
+                        <a href="~/Cart/RemoveFromCart/@item.ProductID" class="btn btn-xs btn-danger ajax-link"
+                           onclick="return confirm('Xóa mặt hàng @item.ProductName ra khỏi giỏ hàng?')">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script>
+    document.querySelectorAll(".decrease").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const row = e.target.closest("tr");
+            const inputField = row.querySelector(".quantity input");
+            const productId = row.querySelector('input[name="selectedProducts"]').value;
+            let currentValue = parseInt(inputField.value) || 0;
+
+            if (currentValue > 1) {
+                currentValue -= 1;
+                inputField.value = currentValue;
+                UpdateCart(productId, currentValue); // Gọi hàm cập nhật
+            }
+        });
+    });
+
+    document.querySelectorAll(".increase").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const row = e.target.closest("tr");
+            const inputField = row.querySelector(".quantity input");
+            const productId = row.querySelector('input[name="selectedProducts"]').value;
+            let currentValue = parseInt(inputField.value) || 0;
+
+            currentValue += 1;
+            inputField.value = currentValue;
+            UpdateCart(productId, currentValue); // Gọi hàm cập nhật
+        });
+    });
+
+
+    document.querySelectorAll(".quantity input").forEach((input) => {
+        input.addEventListener("change", (e) => {
+            const row = e.target.closest("tr");
+            const productId = row.querySelector('input[name="selectedProducts"]').value;
+            const newQuantity = parseInt(e.target.value) || 1;
+
+            // Đảm bảo số lượng tối thiểu là 1
+            if (newQuantity < 1) {
+                e.target.value = 1;
+                UpdateCart(productId, 1);
+            } else {
+                UpdateCart(productId, newQuantity);
+            }
+        });
+    });
+
+
+    $(".ajax-link").click(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).prop("href"),
+            type: "GET",
+            success: function (data) {
+                if (data !== "") {
+                    alert(data);
+                }
+                else {
+                    showShoppingCart();
+                }
+            }
+        });
+    });
+
+    function UpdateCart(productId, newQuantity) {
+        $.ajax({
+            url: "/Cart/UpdateQuantity",
+            type: "POST",
+            data: { ProductID: productId, Quantity: newQuantity },
+            success: function (data) {
+                if (data !== "") {
+                    alert(data);
+                } else {
+                    showShoppingCart(); // Cập nhật giao diện giỏ hàng
+                }
+            },
+        });
+    }
+</script>

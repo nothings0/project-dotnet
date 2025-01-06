@@ -51,6 +51,28 @@ namespace SV21T1020546.Shop.Controllers
             return Json("");
 
         }
+
+        public IActionResult UpdateQuantity(CartItem item)
+        {
+            var shoppingCart = GetShoppingCart();
+            if (item.Quantity <= 0)
+                return Json("Có lỗi");
+
+            var existsProduct = shoppingCart.FirstOrDefault(m => m.ProductID == item.ProductID);
+            if (existsProduct != null)
+            {
+                existsProduct.Quantity = item.Quantity;
+            }
+            else
+            {
+                return Json("Có lỗi");
+            }
+
+            ApplicationContext.SetSessionData(SHOPPING_CART, shoppingCart);
+
+            return Json("");
+        }
+
         public IActionResult RemoveFromcart(int id = 0)
         {
             var shoppingCart = GetShoppingCart();

@@ -5,62 +5,14 @@
 <main class="main">
     <!-- Cart items details -->
     <div class="small-container cart-page">
-        <h3 class="heading">Giỏ hàng</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th style="padding: 0 20px">
-                        <input type="checkbox" id="selectAll" />
-                    </th>
-                    <th>Sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody class="cart-body">
-                @if (Model == null || !Model.Any())
-                {
-                    <tr>
-                        <td colspan="5" style="text-align: center;">Không có sản phẩm</td>
-                    </tr>
-                }
-                else
-                {
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="selectedProducts" value="@item.ProductID" />
-                        </td>
-                        <td>
-                            <div class="cart-info">
-                                <img src="@(string.IsNullOrEmpty(@item.Photo)
-                                ? "http://localhost:45443/images/products/nophoto.png"
-                                : $"http://localhost:45443/images/products/{@item.Photo}")"
-                                         style="width:100px" alt="" />
-                                <div>
-                                    <p>@item.ProductName</p>
-                                        <small>Price: @item.SalePrice.ToString("#,##0")</small>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="quantity">
-                                <span class="decrease">-</span>
-                                <input type="text" value="@item.Quantity" />
-                                <span class="increase">+</span>
-                            </div>
-                        </td>
-                            <td>@item.TotalPrice.ToString("#,##0")</td>
-                        <td>
-                            <button class="btn btn-primary">Xóa</button>
-                        </td>
-                    </tr>
-                }
-                }
-            </tbody>
-        </table>
+        <div style="display: flex; align-items: center; justify-content: space-between">
+            <h3 class="heading">Giỏ hàng</h3>
+            <a href="~/Cart/ClearCart" class="btn btn-sm btn-danger ajax-link" onclick="return confirm('Có muốn xóa giỏ hàng không?')">
+                <i class="fa fa-trash"></i> Xóa giỏ hàng
+            </a>
+        </div>
+        <div id="shoppingCart">
+        </div>
 
         <div style="
             display: flex;
@@ -75,37 +27,28 @@
     </div>
 </main>
 
-@section Scripts {
+@section scripts {
     <script>
         $(document).ready(function () {
 
-            const decreaseBtn = document.querySelector(".decrease");
-            const increaseBtn = document.querySelector(".increase");
-            const inputField = document.querySelector(".quantity input");
+            showShoppingCart()
+        })
 
-            // Gắn sự kiện click cho nút "-"
-            decreaseBtn.addEventListener("click", () => {
-                let currentValue = parseInt(inputField.value) || 0; // Lấy giá trị hiện tại
-                if (currentValue > 0) {
-                    // Không cho giá trị giảm dưới 0
-                    inputField.value = currentValue - 1;
+        $(".ajax-link").click(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: $(this).prop("href"),
+                type: "GET",
+                success: function (data) {
+                    if (data !== "") {
+                        alert(data);
+                    }
+                    else {
+                        showShoppingCart();
+                    }
                 }
             });
-
-            // Gắn sự kiện click cho nút "+"
-            increaseBtn.addEventListener("click", () => {
-                let currentValue = parseInt(inputField.value) || 0; // Lấy giá trị hiện tại
-                inputField.value = currentValue + 1; // Tăng giá trị
-            });
-
-            document
-                .getElementById("selectAll")
-                .addEventListener("change", function () {
-                    const checkboxes = document.querySelectorAll(
-                        'input[type="checkbox"][name="selectedProducts"]'
-                    );
-                    checkboxes.forEach((cb) => (cb.checked = this.checked));
-                });
-        })
+        });
     </script>
 }

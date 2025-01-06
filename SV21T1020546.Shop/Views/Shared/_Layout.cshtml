@@ -123,6 +123,16 @@
         $(document).ready(function () {
             updateCartCount();
         });
+
+        function showShoppingCart() {
+            $.ajax({
+                url: "Cart/ShoppingCart",
+                type: 'GET',
+                success: function (data) {
+                    $('#shoppingCart').html(data);
+                }
+            });
+        }
     </script>
     @RenderSection("scripts", false)
 </body>

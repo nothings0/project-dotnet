@@ -5,7 +5,7 @@
         <div class="box" style="display: flex; flex-direction: column; gap: 10px;">
             <a href="/Account" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account") ? "active" : "")">Tài khoản</a>
             <a href="/Invoice" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Invoice") ? "active" : "")">Đơn mua</a>
-            <a href="/ChangePassword" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account/ChangePassword") ? "active" : "")">Đổi mật khẩu</a>
+            <a href="/Account/ChangePassword" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account/ChangePassword") ? "active" : "")">Đổi mật khẩu</a>
         </div>
     </div>
     <div class="col-md-10 box">
@@ -74,7 +74,7 @@
                                          style="width:100px" alt="" />
                                     <div class="desc">
                                         <h3>@item.ProductName</h3>
-                                        <span>x@item.Quantity</span>
+                                        <span>x @item.Quantity</span>
                                     </div>
                                 </div>
                                 <div class="price">@item.SalePrice.ToString("#,##0")</div>
@@ -88,6 +88,7 @@
                         </div>
                         <div class="button">
                             <a class="btn" href="~/Invoice">Quay lại</a>
+                            <button class="btn">Hủy đơn</button>
                         </div>
                     </div>
                 </div>

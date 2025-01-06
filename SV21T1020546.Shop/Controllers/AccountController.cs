@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using SV21T1020546.BusinessLayers;
 using SV21T1020546.DataLayers;
 using SV21T1020546.DomainModels;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SV21T1020546.Shop.Controllers
 {
@@ -99,7 +102,7 @@ namespace SV21T1020546.Shop.Controllers
                 }
                 else
                 {
-                    var result = UserAccountService.ChangePassword(UserTypes.Employee, userName, oldPassword, newPassword);
+                    var result = UserAccountService.ChangePassword(UserTypes.Customer, userName, oldPassword, newPassword);
                     if (result == true)
                     {
                         return RedirectToAction("Logout");
@@ -112,6 +115,97 @@ namespace SV21T1020546.Shop.Controllers
                 }
             }
             return View();
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            ViewBag.Username = username;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrEmpty(password))
+            {
+                ModelState.AddModelError("Error", "Vui lòng nhập đầy đủ");
+                return View();
+            }
+
+            // Check username && password
+
+            var userAccount = UserAccountService.Authorize(UserTypes.Customer, username, password);
+            if (userAccount == null)
+            {
+                ModelState.AddModelError("Error", "Đăng nhập không thành công");
+                return View();
+            }
+
+            var userData = new WebUserData()
+            {
+                UserId = userAccount.UserId,
+                DisplayName = userAccount.DisplayName,
+                Photo = userAccount.Photo,
+                UserName = userAccount.UserName,
+                Address = userAccount.Address,
+                Phone = userAccount.Phone,
+                Province = userAccount.Province,
+                Roles = userAccount.RoleNames?.Split(",").ToList()
+            };
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, userData.CreatePrincipal());
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> Register(string username, string password, string rePassword)
+        {
+            ViewBag.Username = username;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(rePassword))
+            {
+                ModelState.AddModelError("Error", "Vui lòng nhập đầy đủ thông tin.");
+                return View();
+            }
+
+            if (!password.Equals(rePassword))
+            {
+                ModelState.AddModelError("Error", "Nhập lại mật khẩu không khớp.");
+                return View();
+            }
+
+            var id = UserAccountService.Register(username, password);
+
+            if (id <= 0)
+            {
+                ModelState.AddModelError("Error", "Email đã tồn tại.");
+                return View();
+            }
+
+            return RedirectToAction("Login");
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
         }
     }
 }

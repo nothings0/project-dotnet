@@ -6,7 +6,7 @@ namespace SV21T1020546.Shop.Controllers
 {
     public class CategoryController : Controller
     {
-        private const int PAGE_SIZE = 30;
+        private const int PAGE_SIZE = 12;
         private const string PRODUCT_SEARCH_CONDITION = "ProductCategory";
         public IActionResult Index(int id)
         {

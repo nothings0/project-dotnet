@@ -23,5 +23,10 @@ namespace SV21T1020546.BusinessLayers
         {
             return userAccountDB.ChangePassword(userTypes, username, password, newPassword);
         }
+
+        public static int Register(string username, string password)
+        {
+            return userAccountDB.Register(username, password);
+        }
     }
 }

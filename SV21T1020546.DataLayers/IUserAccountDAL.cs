@@ -12,6 +12,8 @@ namespace SV21T1020546.DataLayers
         UserAccount? Authorize(UserTypes userTypes, string username, string password);
 
         bool ChangePassword(UserTypes userTypes, string username, string password, string newPassword);
+
+        int Register(string username, string password);
     }
 
     public enum UserTypes

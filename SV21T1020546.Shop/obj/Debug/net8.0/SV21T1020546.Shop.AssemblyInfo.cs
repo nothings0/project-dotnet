@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SV21T1020546.Shop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cdf7cef31a61422585a975a4c2429490a85797e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa9a49fc58a0c307b29f9626d258c4c4528f6c31")]
 [assembly: System.Reflection.AssemblyProductAttribute("SV21T1020546.Shop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SV21T1020546.Shop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

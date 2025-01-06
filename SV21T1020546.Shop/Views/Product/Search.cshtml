@@ -4,7 +4,7 @@
 }
 
 
-<div class="grid">
+<div class="grid grid-3">
     @foreach (var item in Model.Data)
     {
         <div class="col-4">
@@ -24,7 +24,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-o"></i>
                     </div>
-                    <p>@item.Price</p>
+                    <p>@item.Price.ToString("#,##0")</p>
                 </div>
             </a>
         </div>

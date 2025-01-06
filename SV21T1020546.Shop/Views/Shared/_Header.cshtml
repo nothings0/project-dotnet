@@ -3,7 +3,7 @@
         <div class="search__container">
             <div class="search__left">
                 <div class="logo"><a href="~/">PVN</a></div>
-                <form class="search__box" id="frmSearchInput" action="~/Product/SearchProduct" method="get">
+                <form class="search__box" id="frmSearchInputHeader" action="~/Product/SearchProduct" method="get">
                     <input type="hidden" name="PageSize" value="20"/>
                     <div class="search__box__input">
                         <input type="text"
@@ -30,13 +30,13 @@
                                 <li><a href="~/Invoice">Đơn mua</a></li>
                                 <li><a href="~/Account/ChangePassword">Đổi mật khẩu</a></li>
                                 <hr />
-                                <li><a href="~/Auth/Logout">Đăng xuất</a></li>
+                                <li><a href="~/Account/Logout">Đăng xuất</a></li>
                             </ul>
                         </div>
                     }
                     else
                     {
-                        <a href="~/Auth/Login">
+                        <a href="~/Account/Login">
                             <div class="account-btn">
                                 <i class="fa fa-user"></i>
                                 <span>Đăng nhập</span>

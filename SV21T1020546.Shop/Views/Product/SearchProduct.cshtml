@@ -37,7 +37,7 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-                                <p>@item.Price</p>
+                                <p>@item.Price.ToString("#,##0")</p>
                             </div>
                         </a>
                     </div>
@@ -53,7 +53,7 @@
                         }
                         else
                         {
-                            <li><a href="javascript:;" onclick="doSearch(@p)">@p</a></li>
+                            <li><a href="~/Product/SearchProduct?PageSize=@Model.PageSize&SearchValue=@Model.SearchValue&Page=@p">@p</a></li>
                         }
                     }
                 </ul>
@@ -61,36 +61,3 @@
         </div>
     </div>
 </main>
-
-@section scripts {
-    <script>
-        function doSearch(page) {
-            var searchCondition = {
-                Page: page,
-                PageSize: @Model.PageSize,
-                SearchValue: @Model.SearchValue,
-                CategoryID: @Model.CategoryID,
-                SupplierID: @Model.SupplierID,
-                MinPrice: @Model.MinPrice,
-                MaxPrice: @Model.MaxPrice
-            };
-
-            $.ajax({
-                url: `/Product/Search`,
-                type: "GET",
-                data: searchCondition,
-                success: function (data) {
-                    $("#searchResult").html(data);
-                }
-            });
-        };
-        $(document).ready(function () {
-            var a = @Model.Page
-                doSearch(a);
-            $("#frmSearchInput").submit(function (e) {
-                e.preventDefault();
-                doSearch(1);
-            })
-        });
-    </script>
-}
