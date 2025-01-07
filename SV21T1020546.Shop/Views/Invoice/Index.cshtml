@@ -1,12 +1,16 @@
 ﻿@model List<SV21T1020546.DomainModels.Order>
 
+@{
+    decimal totalPrice = 0;
+}
 <main class="flex main">
     <div class="col-md-2">
         <div class="box" style="display: flex; flex-direction: column; gap: 10px;">
-            <a href="/Account" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account") ? "active" : "")">Tài khoản</a>
-            <a href="/Invoice" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Invoice") ? "active" : "")">Đơn mua</a>
-            <a href="/Account/ChangePassword" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path.StartsWithSegments("/Account/ChangePassword") ? "active" : "")">Đổi mật khẩu</a>
+            <a href="/Account" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path == "/Account" ? "active" : "")">Tài khoản</a>
+            <a href="/Invoice" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path == "/Invoice" ? "active" : "")">Đơn mua</a>
+            <a href="/Account/ChangePassword" class="sidebar_item @(Url.ActionContext.HttpContext.Request.Path == "/Account/ChangePassword" ? "active" : "")">Đổi mật khẩu</a>
         </div>
+
     </div>
     <div class="col-md-10 box">
         <div class="box-body content">
@@ -26,6 +30,7 @@
                             <div class="purchase_product">
                                 @foreach (var invoice in SV21T1020546.BusinessLayers.OrderDataService.ListOrderDetails(item.OrderID))
                                 {
+                                    totalPrice += invoice.TotalPrice;
                                     <div class="purchase_product_item">
                                         <div class="product">
                                             <img src="@(string.IsNullOrEmpty(@invoice.Photo)
@@ -44,14 +49,14 @@
                             <hr />
                             <div class="purchase_bottom">
                                 <div class="total">
-                                    Thành tiền: <span class="">₫18.000</span>
+                                    Thành tiền: <span class="">@totalPrice.ToString("#,##0")</span>
                                 </div>
                                 <div class="button">
                                     <a class="btn btn-primary" type="button" href="/Invoice/Detail/@item.OrderID">Xem chi tiết</a>
-                                    <button class="btn">Hủy đơn</button>
                                 </div>
                             </div>
                         </div>
+                        totalPrice = 0;
                     }
                 </div>
                 @foreach (var item in SV21T1020546.BusinessLayers.OrderDataService.ListStatus())
@@ -59,10 +64,12 @@
                     <div id="@item.Status" class="tab-pane fade">
                         @foreach (var detail in Model.Where(o => o.Status == item.Status))
                         {
+                            
                             <div class="purchase_item">
                                 <div class="purchase_product">
                                     @foreach (var invoice in SV21T1020546.BusinessLayers.OrderDataService.ListOrderDetails(detail.OrderID))
                                     {
+                                        totalPrice += invoice.TotalPrice;
                                         <div class="purchase_product_item">
                                             <div class="product">
                                                 <img src="@(string.IsNullOrEmpty(@invoice.Photo)
@@ -81,13 +88,14 @@
                                 <hr />
                                 <div class="purchase_bottom">
                                     <div class="total">
-                                        Thành tiền: <span class="">₫18.000</span>
+                                        Thành tiền: <span class="">@totalPrice.ToString("#,##0")</span>
                                     </div>
                                     <div class="button">
                                         <a class="btn btn-primary" type="button" href="/Invoice/Detail/@detail.OrderID">Xem chi tiết</a>
                                     </div>
                                 </div>
                             </div>
+                            totalPrice = 0;
                         }
                         <hr />
                     </div>

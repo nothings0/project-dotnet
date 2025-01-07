@@ -16,7 +16,6 @@ namespace SV21T1020546.Shop.Controllers
         public IActionResult Index()
         {
             var userData = User.GetUserData();
-            Console.WriteLine(userData.UserId);
             int id = int.Parse(userData.UserId);
             var account = CommonDataService.GetCustomer(id);
             return View(account);

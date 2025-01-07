@@ -12,22 +12,22 @@
                      style="width:100%" alt="" />
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img src="images/gallery-1.jpg"
+                        <img src="http://localhost:45443/images/products/nophoto.png"
                              width="100%"
                              class="small-img" />
                     </div>
                     <div class="small-img-col">
-                        <img src="images/gallery-2.jpg"
+                        <img src="http://localhost:45443/images/products/nophoto.png"
                              width="100%"
                              class="small-img" />
                     </div>
                     <div class="small-img-col">
-                        <img src="images/gallery-3.jpg"
+                        <img src="http://localhost:45443/images/products/nophoto.png"
                              width="100%"
                              class="small-img" />
                     </div>
                     <div class="small-img-col">
-                        <img src="images/gallery-4.jpg"
+                        <img src="http://localhost:45443/images/products/nophoto.png"
                              width="100%"
                              class="small-img" />
                     </div>
@@ -44,19 +44,7 @@
                 <h1>@Model.ProductData.ProductName</h1>
                 <div class="product_option">
                     <p>Giá</p>
-                    <span>$50.00</span>
-                </div>
-
-                <div class="product_option" style="margin-top: 20px">
-                    <p>Chọn loại</p>
-                    <select>
-                        <option>Select Size</option>
-                        <option>XXL</option>
-                        <option>XL</option>
-                        <option>L</option>
-                        <option>M</option>
-                        <option>S</option>
-                    </select>
+                    <span>@Model.ProductData.Price.ToString("#,##0")</span>
                 </div>
                 <div class="product_option" style="margin: 20px 0">
                     <p>Số lượng</p>
@@ -71,13 +59,6 @@
                     <button href="" class="btn btn-primary">Mua ngay</button>
                 </div>
                 <hr />
-                <h3>Product Details <i class="fa fa-indent"></i></h3>
-                <br />
-                <p>
-                    Give your summer wardrobe a style upgrade with the HRX Men's
-                    Active T-Shirt. Team it with a pair of shorts for your morning
-                    workout or a denims for an evening out with the guys.
-                </p>
             </form>
         </div>
     </div>
@@ -88,11 +69,9 @@
     <div class="header_product">
         <h2>Có thể bạn sẽ thích</h2>
         <select>
-            <option>Default Sort</option>
-            <option>Sort By Price</option>
-            <option>Sort By Popularity</option>
-            <option>Sort By Rating</option>
-            <option>Sort By Sale</option>
+            <option>-- Giá --</option>
+            <option>Tăng dần</option>
+            <option>Giảm dần</option>
         </select>
     </div>
     <div class="grid">

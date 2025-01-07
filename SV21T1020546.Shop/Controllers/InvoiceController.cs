@@ -8,15 +8,25 @@ namespace SV21T1020546.Shop.Controllers
     {
         public IActionResult Index()
         {
-            int userId = 4311;
-            var orders = OrderDataService.GetOrdersOfUser(userId);
+            ViewBag.Title = "Đơn mua";
+            var userData = User.GetUserData();
+            int id = int.Parse(userData.UserId);
+            var orders = OrderDataService.GetOrdersOfUser(id);
             return View(orders);
         }
 
         public IActionResult Detail(int id)
         {
+            ViewBag.Title = "Chi tiết đơn hàng";
             var order = OrderDataService.GetOrder(id);
             return View(order);
+        }
+
+        public IActionResult Cancel(int id = 0)
+        {
+            var data = OrderDataService.CancelOrder(id);
+
+            return RedirectToAction("Detail", new { id = id });
         }
     }
 }

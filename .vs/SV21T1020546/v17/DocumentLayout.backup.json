@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.shop\\views\\product\\searchproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|solutionrelative:sv21t1020546.shop\\views\\product\\searchproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.shop\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|solutionrelative:sv21t1020546.shop\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.shop\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|solutionrelative:sv21t1020546.shop\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.shop\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|solutionrelative:sv21t1020546.shop\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ACD04BA9-BA9B-4C35-BE0C-E9BBAA6FDBC6}|SV21T1020546.Shop\\SV21T1020546.Shop.csproj|c:\\users\\pv\\source\\repos\\sv21t1020546\\sv21t1020546.shop\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -22,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Header.cshtml",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Shared\\_Header.cshtml",
+              "RelativeDocumentMoniker": "SV21T1020546.Shop\\Views\\Shared\\_Header.cshtml",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Shared\\_Header.cshtml",
+              "RelativeToolTip": "SV21T1020546.Shop\\Views\\Shared\\_Header.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-07T09:08:30.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Footer.cshtml",
+              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Shared\\_Footer.cshtml",
+              "RelativeDocumentMoniker": "SV21T1020546.Shop\\Views\\Shared\\_Footer.cshtml",
+              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Shared\\_Footer.cshtml",
+              "RelativeToolTip": "SV21T1020546.Shop\\Views\\Shared\\_Footer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-07T09:02:26.632Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -32,35 +58,9 @@
               "RelativeDocumentMoniker": "SV21T1020546.Shop\\Views\\ProductDetail\\Index.cshtml",
               "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\ProductDetail\\Index.cshtml",
               "RelativeToolTip": "SV21T1020546.Shop\\Views\\ProductDetail\\Index.cshtml",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAAH8AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T16:06:30.384Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Product\\Index.cshtml",
-              "RelativeDocumentMoniker": "SV21T1020546.Shop\\Views\\Product\\Index.cshtml",
-              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Product\\Index.cshtml",
-              "RelativeToolTip": "SV21T1020546.Shop\\Views\\Product\\Index.cshtml",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAowG8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T16:04:14.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SearchProduct.cshtml",
-              "DocumentMoniker": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Product\\SearchProduct.cshtml",
-              "RelativeDocumentMoniker": "SV21T1020546.Shop\\Views\\Product\\SearchProduct.cshtml",
-              "ToolTip": "C:\\Users\\pv\\source\\repos\\SV21T1020546\\SV21T1020546.Shop\\Views\\Product\\SearchProduct.cshtml",
-              "RelativeToolTip": "SV21T1020546.Shop\\Views\\Product\\SearchProduct.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-06T15:55:54.259Z",
+              "WhenOpened": "2025-01-07T08:54:08.138Z",
               "EditorCaption": ""
             }
           ]
